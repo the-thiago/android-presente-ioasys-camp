@@ -1,10 +1,12 @@
-package com.br.equipe.oito.presente
+package com.br.equipe.oito.presente.ui.splash
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.br.equipe.oito.presente.R
+import com.br.equipe.oito.presente.ui.login.LoginActivity
 
 class SplashActivity : AppCompatActivity() {
 
