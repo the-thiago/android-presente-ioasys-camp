@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">Presente</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="fragment_first_login_app_logo">App logo</string>
     <string name="fragment_first_login_start_session">Iniciar sessão</string>
     <string name="fragment_first_login_register">Cadastre-se</string>
     <string name="fragment_first_login_continue_as_guest">Continuar como convidado</string>
+
 </resources>

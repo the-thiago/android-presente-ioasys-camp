@@ -5,19 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.br.equipe.oito.presente.databinding.FragmentLoginBinding
+import com.br.equipe.oito.presente.databinding.FragmentPasswordRegisterBinding
 
-class LoginFragment : Fragment() {
+class PasswordRegisterFragment : Fragment() {
 
-    private var _binding: FragmentLoginBinding? = null
+    private var _binding: FragmentPasswordRegisterBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        _binding = FragmentPasswordRegisterBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -28,16 +27,15 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initListeners()
+        initListener()
     }
 
-    private fun initListeners() {
+    private fun initListener() {
+        binding.btnContinuePassword.setOnClickListener {
+
+        }
         binding.tvBack.setOnClickListener {
             requireActivity().onBackPressed()
-        }
-        binding.btnStartSession.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_homeActivity)
-            requireActivity().finish()
         }
     }
 

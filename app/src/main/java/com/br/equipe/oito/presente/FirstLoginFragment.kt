@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.br.equipe.oito.presente.databinding.FragmentFirstLoginBinding
-import com.br.equipe.oito.presente.databinding.FragmentLoginBinding
 
 class FirstLoginFragment : Fragment() {
 
@@ -29,8 +28,15 @@ class FirstLoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initListeners()
+    }
+
+    private fun initListeners() {
         binding.btnStartSession.setOnClickListener {
             findNavController().navigate(FirstLoginFragmentDirections.actionFirstLoginFragmentToLoginFragment())
+        }
+        binding.btnNewAccount.setOnClickListener {
+            findNavController().navigate(FirstLoginFragmentDirections.actionFirstLoginFragmentToChooseTypeOfUserFragment())
         }
     }
 

@@ -18,7 +18,7 @@ class LoginActivity : AppCompatActivity() {
         val window = window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         window.statusBarColor =
-            ResourcesCompat.getColor(resources, R.color.status_bar_orange, null);
+            ResourcesCompat.getColor(resources, R.color.status_bar_orange, null)
     }
 
 //    override fun onBackPressed() {

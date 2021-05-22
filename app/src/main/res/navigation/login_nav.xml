@@ -33,7 +33,60 @@
             android:id="@+id/action_firstLoginFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
         <action
-            android:id="@+id/action_firstLoginFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
+            android:id="@+id/action_firstLoginFragment_to_chooseTypeOfUserFragment"
+            app:destination="@id/chooseTypeOfUserFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/chooseTypeOfUserFragment"
+        android:name="com.br.equipe.oito.presente.ChooseTypeOfUserFragment"
+        android:label="fragment_choose_type_of_user"
+        tools:layout="@layout/fragment_choose_type_of_user" >
+        <action
+            android:id="@+id/action_chooseTypeOfUserFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_chooseTypeOfUserFragment_to_chooseTypeOfSessionFragment"
+            app:destination="@id/chooseTypeOfSessionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseTypeOfSessionFragment"
+        android:name="com.br.equipe.oito.presente.ChooseTypeOfSessionFragment"
+        android:label="fragment_choose_type_of_session"
+        tools:layout="@layout/fragment_choose_type_of_session" >
+        <action
+            android:id="@+id/action_chooseTypeOfSessionFragment_to_nameRegisterFragment"
+            app:destination="@id/nameRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nameRegisterFragment"
+        android:name="com.br.equipe.oito.presente.NameRegisterFragment"
+        android:label="fragment_name_register"
+        tools:layout="@layout/fragment_name_register" >
+        <action
+            android:id="@+id/action_nameRegisterFragment_to_emailRegisterFragment"
+            app:destination="@id/emailRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailRegisterFragment"
+        android:name="com.br.equipe.oito.presente.EmailRegisterFragment"
+        android:label="fragment_email_register"
+        tools:layout="@layout/fragment_email_register" >
+        <action
+            android:id="@+id/action_emailRegisterFragment_to_passwordRegisterFragment"
+            app:destination="@id/passwordRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordRegisterFragment"
+        android:name="com.br.equipe.oito.presente.PasswordRegisterFragment"
+        android:label="fragment_password_register"
+        tools:layout="@layout/fragment_password_register" >
+        <action
+            android:id="@+id/action_passwordRegisterFragment_to_cepRegisterFragment"
+            app:destination="@id/cepRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cepRegisterFragment"
+        android:name="com.br.equipe.oito.presente.CepRegisterFragment"
+        android:label="fragment_cep_register"
+        tools:layout="@layout/fragment_cep_register" />
 </navigation>

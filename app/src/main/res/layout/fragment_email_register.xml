@@ -36,14 +36,14 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/tvGoodToSeeYouAgain"
+                android:id="@+id/tvHiPleasure"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="28dp"
                 android:layout_marginTop="55dp"
                 android:fontFamily="@font/rubik_bold"
                 android:lineHeight="38dp"
-                android:text="Bom te ver\nde novo!"
+                android:text="Para entrar,"
                 android:textAlignment="textStart"
                 android:textColor="@color/purple_text"
                 android:textSize="32sp"
@@ -54,121 +54,79 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0" />
 
+            <TextView
+                android:id="@+id/tvWhatsYourName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="28dp"
+                android:lineHeight="18dp"
+                android:text="Qual email será utilizado?"
+                android:textAlignment="textStart"
+                android:textColor="@color/light_gray"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHiPleasure"
+                app:layout_constraintVertical_bias="0" />
+
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/ilEmail"
+                android:id="@+id/ilName"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginTop="55dp"
-                android:hint="E-mail"
                 app:endIconMode="clear_text"
                 app:errorEnabled="true"
                 app:errorIconDrawable="@drawable/ic_error"
+                app:hintEnabled="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvGoodToSeeYouAgain"
+                app:layout_constraintTop_toBottomOf="@+id/tvWhatsYourName"
                 app:layout_constraintVertical_bias="0.0">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etEmail"
+                    android:id="@+id/etName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="caroline@email.com"
                     android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/ilPassword"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="25dp"
-                android:layout_marginTop="0dp"
-                android:hint="Senha"
-                app:endIconMode="password_toggle"
-                app:errorEnabled="true"
-                app:errorIconDrawable="@drawable/ic_error"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ilEmail">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <View
-                android:id="@+id/leftLine"
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                 android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_marginStart="26dp"
-                android:layout_marginEnd="16dp"
-                android:background="@color/light_gray"
-                app:layout_constraintBottom_toBottomOf="@+id/tvOrUse"
-                app:layout_constraintEnd_toStartOf="@+id/tvOrUse"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tvOrUse" />
-
-            <View
-                android:id="@+id/rightLine"
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="26dp"
-                android:background="@color/light_gray"
-                app:layout_constraintBottom_toBottomOf="@+id/tvOrUse"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tvOrUse"
-                app:layout_constraintTop_toTopOf="@+id/tvOrUse" />
-
-            <TextView
-                android:id="@+id/tvOrUse"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ou use:"
+                android:progressBackgroundTint="@color/light_gray"
+                android:progressTint="@color/progress_bar_pink"
+                android:progress="22"
+                android:scaleY="2"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ilPassword"
-                app:layout_constraintVertical_bias="0.13" />
-
-            <ImageView
-                android:id="@+id/btnGoogle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_google"
-                app:layout_constraintBottom_toBottomOf="@+id/btnFacebook"
-                app:layout_constraintEnd_toStartOf="@+id/tvOrUse"
-                app:layout_constraintTop_toTopOf="@+id/btnFacebook" />
-
-            <ImageView
-                android:id="@+id/btnFacebook"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/ic_facebook"
-                app:layout_constraintBottom_toTopOf="@+id/btnStartSession"
-                app:layout_constraintStart_toEndOf="@+id/tvOrUse"
-                app:layout_constraintTop_toBottomOf="@+id/tvOrUse"
-                app:layout_constraintVertical_bias="0.26999998" />
+                app:layout_constraintEnd_toEndOf="@id/ilName"
+                app:layout_constraintStart_toStartOf="@id/ilName"
+                app:layout_constraintTop_toBottomOf="@id/ilName"
+                app:layout_constraintVertical_bias="0.06" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnStartSession"
+                android:id="@+id/btnContinueEmail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="26dp"
-                android:layout_marginTop="33dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginBottom="18dp"
                 android:background="@drawable/button_green_background"
-                android:text="Entrar"
+                android:text="Continuar"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@id/tvBack"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progressBar"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/tvBack"

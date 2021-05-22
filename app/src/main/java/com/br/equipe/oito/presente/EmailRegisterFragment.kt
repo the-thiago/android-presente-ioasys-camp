@@ -6,18 +6,24 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.br.equipe.oito.presente.databinding.FragmentLoginBinding
+import com.br.equipe.oito.presente.databinding.FragmentEmailRegisterBinding
 
-class LoginFragment : Fragment() {
+class EmailRegisterFragment : Fragment() {
 
-    private var _binding: FragmentLoginBinding? = null
+    companion object {
+        const val TAG = "EmailRegisterFragment"
+        const val maxProgress = 9000
+        const val currentProgress = 2000
+    }
+
+    private var _binding: FragmentEmailRegisterBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        _binding = FragmentEmailRegisterBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -28,16 +34,15 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initListeners()
+        initListener()
     }
 
-    private fun initListeners() {
+    private fun initListener() {
+        binding.btnContinueEmail.setOnClickListener {
+            findNavController().navigate(EmailRegisterFragmentDirections.actionEmailRegisterFragmentToPasswordRegisterFragment())
+        }
         binding.tvBack.setOnClickListener {
             requireActivity().onBackPressed()
-        }
-        binding.btnStartSession.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_homeActivity)
-            requireActivity().finish()
         }
     }
 

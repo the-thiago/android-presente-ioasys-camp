@@ -13,8 +13,10 @@
     <color name="light_green_button">#89C8A5</color>
     <color name="border_button">#999999</color>
     <color name="purple_text">#614F91</color>
-    <color name="gray_line">#555555</color>
+    <color name="light_gray">#555555</color>
     <color name="orange_text_color">#EB5C2C</color>
+    <color name="progress_bar_gray">#C4C4C4</color>
+    <color name="progress_bar_pink">#F193B7</color>
 
 
 </resources>
