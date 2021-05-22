@@ -5,13 +5,20 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import com.br.equipe.oito.presente.R
+import com.br.equipe.oito.presente.databinding.ActivityLoginBinding
+import com.br.equipe.oito.presente.util.invisible
+import com.br.equipe.oito.presente.util.visible
 
 class LoginActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityLoginBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         changeStatusBarColor()
-        setContentView(R.layout.activity_login)
+        val view = binding.root
+        setContentView(view)
     }
 
     private fun changeStatusBarColor() {
@@ -19,6 +26,14 @@ class LoginActivity : AppCompatActivity() {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         window.statusBarColor =
             ResourcesCompat.getColor(resources, R.color.status_bar_orange, null)
+    }
+
+    fun hideLoading() {
+        binding.loadingGroup.invisible()
+    }
+
+    fun showLoading() {
+        binding.loadingGroup.visible()
     }
 
 //    override fun onBackPressed() {

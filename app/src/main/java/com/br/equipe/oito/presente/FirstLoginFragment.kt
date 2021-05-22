@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.br.equipe.oito.presente.databinding.FragmentFirstLoginBinding
@@ -18,6 +19,7 @@ class FirstLoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFirstLoginBinding.inflate(inflater, container, false)
+        changeConstraintLayoutPadding(140)
         return binding.root
     }
 
@@ -33,11 +35,28 @@ class FirstLoginFragment : Fragment() {
 
     private fun initListeners() {
         binding.btnStartSession.setOnClickListener {
+            changeConstraintLayoutPadding(20)
             findNavController().navigate(FirstLoginFragmentDirections.actionFirstLoginFragmentToLoginFragment())
         }
         binding.btnNewAccount.setOnClickListener {
+            changeConstraintLayoutPadding(20)
             findNavController().navigate(FirstLoginFragmentDirections.actionFirstLoginFragmentToChooseTypeOfUserFragment())
         }
+    }
+
+    private fun changeConstraintLayoutPadding(top: Int) {
+        requireActivity().findViewById<ConstraintLayout>(R.id.loginConstraintLayout).apply {
+            this?.setPadding(
+                convertDpToPx(22),
+                convertDpToPx(top),
+                convertDpToPx(20),
+                convertDpToPx(22)
+            )
+        }
+    }
+
+    private fun convertDpToPx(dp: Int): Int {
+        return (dp * requireContext().resources.displayMetrics.density).toInt()
     }
 
 }
