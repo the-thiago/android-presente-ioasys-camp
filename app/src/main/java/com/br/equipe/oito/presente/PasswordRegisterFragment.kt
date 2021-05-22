@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.br.equipe.oito.presente.databinding.FragmentPasswordRegisterBinding
 
 class PasswordRegisterFragment : Fragment() {
@@ -32,7 +33,7 @@ class PasswordRegisterFragment : Fragment() {
 
     private fun initListener() {
         binding.btnContinuePassword.setOnClickListener {
-
+            findNavController().navigate(PasswordRegisterFragmentDirections.actionPasswordRegisterFragmentToCepRegisterFragment())
         }
         binding.tvBack.setOnClickListener {
             requireActivity().onBackPressed()

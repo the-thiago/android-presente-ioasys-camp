@@ -43,7 +43,7 @@
                 android:layout_marginTop="55dp"
                 android:fontFamily="@font/rubik_bold"
                 android:lineHeight="38dp"
-                android:text="Para entrar,"
+                android:text="Sobre você"
                 android:textAlignment="textStart"
                 android:textColor="@color/purple_text"
                 android:textSize="32sp"
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="28dp"
                 android:lineHeight="18dp"
-                android:text="Qual email será utilizado?"
+                android:text="Qual a sua orientação sexual?"
                 android:textAlignment="textStart"
                 android:textColor="@color/light_gray"
                 android:textSize="16sp"
@@ -96,7 +96,7 @@
                     android:id="@+id/etName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="caroline@email.com"
+                    android:hint="Toque para selecionar"
                     android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -105,7 +105,7 @@
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:progress="22"
+                android:progress="66"
                 android:progressBackgroundTint="@color/light_gray"
                 android:progressTint="@color/progress_bar_pink"
                 android:scaleY="2"
@@ -116,7 +116,7 @@
                 app:layout_constraintVertical_bias="0.06" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnContinueEmail"
+                android:id="@+id/btnContinueSexualOrientation"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="26dp"

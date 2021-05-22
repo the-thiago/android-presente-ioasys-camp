@@ -17,6 +17,12 @@
     <color name="orange_text_color">#EB5C2C</color>
     <color name="progress_bar_gray">#C4C4C4</color>
     <color name="progress_bar_pink">#F193B7</color>
-
-
+    <color name="green_input_layout">#89C8A5</color>
+    <color name="purple_android">#614F91</color>
+    <color name="orange_front_end">#EB5C2C</color>
+    <color name="light_blue_work_tips">#0FD4D4</color>
+    <color name="green_ios">#89C8A5</color>
+    <color name="yellow_ux_ui">#EEBE42</color>
+    <color name="green_back_end">#287F42</color>
+    <color name="pink_project_management">#F193B7</color>
 </resources>

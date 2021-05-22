@@ -88,5 +88,54 @@
         android:id="@+id/cepRegisterFragment"
         android:name="com.br.equipe.oito.presente.CepRegisterFragment"
         android:label="fragment_cep_register"
-        tools:layout="@layout/fragment_cep_register" />
+        tools:layout="@layout/fragment_cep_register" >
+        <action
+            android:id="@+id/action_cepRegisterFragment_to_genderFragment"
+            app:destination="@id/genderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/genderFragment"
+        android:name="com.br.equipe.oito.presente.GenderFragment"
+        android:label="fragment_gender"
+        tools:layout="@layout/fragment_gender" >
+        <action
+            android:id="@+id/action_genderFragment_to_sexualOrientationFragment"
+            app:destination="@id/sexualOrientationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sexualOrientationFragment"
+        android:name="com.br.equipe.oito.presente.SexualOrientationFragment"
+        android:label="fragment_sexual_orientation"
+        tools:layout="@layout/fragment_sexual_orientation" >
+        <action
+            android:id="@+id/action_sexualOrientationFragment_to_raceFragment"
+            app:destination="@id/raceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/raceFragment"
+        android:name="com.br.equipe.oito.presente.RaceFragment"
+        android:label="fragment_race"
+        tools:layout="@layout/fragment_race" >
+        <action
+            android:id="@+id/action_raceFragment_to_interestsFragment"
+            app:destination="@id/interestsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/interestsFragment"
+        android:name="com.br.equipe.oito.presente.InterestsFragment"
+        android:label="fragment_interests"
+        tools:layout="@layout/fragment_interests" >
+        <action
+            android:id="@+id/action_interestsFragment_to_finishRegisterFragment"
+            app:destination="@id/finishRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishRegisterFragment"
+        android:name="com.br.equipe.oito.presente.FinishRegisterFragment"
+        android:label="fragment_finish_register"
+        tools:layout="@layout/fragment_finish_register" >
+        <action
+            android:id="@+id/action_finishRegisterFragment_to_homeActivity"
+            app:destination="@id/homeActivity" />
+    </fragment>
 </navigation>

@@ -6,18 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.br.equipe.oito.presente.databinding.FragmentCepRegisterBinding
+import com.br.equipe.oito.presente.databinding.FragmentSexualOrientationBinding
 
-class CepRegisterFragment : Fragment() {
+class SexualOrientationFragment : Fragment() {
 
-    private var _binding: FragmentCepRegisterBinding? = null
+    private var _binding: FragmentSexualOrientationBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentCepRegisterBinding.inflate(inflater, container, false)
+        _binding = FragmentSexualOrientationBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -32,8 +32,8 @@ class CepRegisterFragment : Fragment() {
     }
 
     private fun initListener() {
-        binding.btnContinueCep.setOnClickListener {
-            findNavController().navigate(CepRegisterFragmentDirections.actionCepRegisterFragmentToGenderFragment())
+        binding.btnContinueSexualOrientation.setOnClickListener {
+            findNavController().navigate(SexualOrientationFragmentDirections.actionSexualOrientationFragmentToRaceFragment())
         }
         binding.tvBack.setOnClickListener {
             requireActivity().onBackPressed()

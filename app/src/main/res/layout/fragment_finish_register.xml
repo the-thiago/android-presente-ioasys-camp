@@ -36,14 +36,14 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/tvHiPleasure"
+                android:id="@+id/tvThereWeGo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="28dp"
                 android:layout_marginTop="55dp"
                 android:fontFamily="@font/rubik_bold"
                 android:lineHeight="38dp"
-                android:text="Para entrar,"
+                android:text="Vamos lá!"
                 android:textAlignment="textStart"
                 android:textColor="@color/purple_text"
                 android:textSize="32sp"
@@ -54,96 +54,75 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0" />
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="187dp"
+                android:layout_height="166dp"
+                android:layout_marginTop="22dp"
+                android:src="@drawable/ic_high_five"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvThereWeGo" />
+
             <TextView
-                android:id="@+id/tvWhatsYourName"
+                android:id="@+id/tvStartStudies"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="28dp"
-                android:lineHeight="18dp"
-                android:text="Qual email será utilizado?"
-                android:textAlignment="textStart"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="40dp"
+                android:lineHeight="19dp"
+                android:text="Que comecem os estudos!"
+                android:textAlignment="center"
                 android:textColor="@color/light_gray"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvHiPleasure"
-                app:layout_constraintVertical_bias="0" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/ilName"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tvStudiesInformation"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
-                android:layout_marginTop="55dp"
-                app:boxCornerRadiusBottomEnd="8dp"
-                app:boxCornerRadiusBottomStart="8dp"
-                app:boxCornerRadiusTopEnd="8dp"
-                app:boxCornerRadiusTopStart="8dp"
-                app:boxStrokeColor="@color/green_input_layout"
-                app:endIconMode="clear_text"
-                app:errorEnabled="true"
-                app:errorIconDrawable="@drawable/ic_error"
-                app:hintEnabled="false"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:lineHeight="19dp"
+                android:text="Aqui daremos início a nossa\nparceria em busca de um futuro\nmais justo e diverso."
+                android:textAlignment="center"
+                android:textColor="@color/light_gray"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvWhatsYourName"
-                app:layout_constraintVertical_bias="0.0">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="caroline@email.com"
-                    android:inputType="textEmailAddress" />
-            </com.google.android.material.textfield.TextInputLayout>
+                app:layout_constraintTop_toBottomOf="@+id/tvStartStudies" />
 
             <ProgressBar
                 android:id="@+id/progressBar"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:progress="22"
+                android:layout_marginBottom="16dp"
+                android:progress="100"
                 android:progressBackgroundTint="@color/light_gray"
                 android:progressTint="@color/progress_bar_pink"
                 android:scaleY="2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/ilName"
-                app:layout_constraintStart_toStartOf="@id/ilName"
-                app:layout_constraintTop_toBottomOf="@id/ilName"
-                app:layout_constraintVertical_bias="0.06" />
+                app:layout_constraintBottom_toTopOf="@+id/btnSignIn"
+                app:layout_constraintEnd_toEndOf="@id/btnSignIn"
+                app:layout_constraintStart_toStartOf="@id/btnSignIn" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnContinueEmail"
+                android:id="@+id/btnSignIn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="26dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="18dp"
                 android:background="@drawable/button_green_background"
-                android:text="Continuar"
+                android:text="Entrar"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@id/tvBack"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/progressBar"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/tvBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="45dp"
-                android:text="Voltar"
-                android:textColor="@color/orange_text_color"
-                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvStudiesInformation"
+                app:layout_constraintVertical_bias="0.42" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
