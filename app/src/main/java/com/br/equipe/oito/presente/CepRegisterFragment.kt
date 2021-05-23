@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.br.equipe.oito.presente.databinding.FragmentCepRegisterBinding
+import com.br.equipe.oito.presente.util.Mask
 
 class CepRegisterFragment : Fragment() {
 
@@ -32,6 +33,7 @@ class CepRegisterFragment : Fragment() {
     }
 
     private fun initListener() {
+        binding.etCep.addTextChangedListener(Mask.insert(Mask.FORMAT_CEP, binding.etCep))
         binding.btnContinueCep.setOnClickListener {
             findNavController().navigate(CepRegisterFragmentDirections.actionCepRegisterFragmentToGenderFragment())
         }

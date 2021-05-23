@@ -11,6 +11,10 @@ import com.br.equipe.oito.presente.util.visible
 
 class LoginActivity : AppCompatActivity() {
 
+    companion object {
+        const val TAG = "LoginActivity"
+    }
+
     private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
