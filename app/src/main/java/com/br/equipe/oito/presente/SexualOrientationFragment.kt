@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.br.equipe.oito.presente.databinding.FragmentSexualOrientationBinding
@@ -29,6 +31,17 @@ class SexualOrientationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initListener()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        initDropdownGenders()
+    }
+
+    private fun initDropdownGenders() {
+        val items = resources.getStringArray(R.array.sexualOrientations)
+        val adapter = ArrayAdapter(requireContext(), R.layout.list_item_dropdown, items)
+        (binding.ilSexualOrientation.editText as? AutoCompleteTextView)?.setAdapter(adapter)
     }
 
     private fun initListener() {

@@ -7,4 +7,30 @@
     <string name="fragment_first_login_register">Cadastre-se</string>
     <string name="fragment_first_login_continue_as_guest">Continuar como convidado</string>
 
+    <string-array name="genders">
+        <item>Homem Cis</item>
+        <item>Homem Tras</item>
+        <item>Mulher Cis</item>
+        <item>Mulher Trans</item>
+        <item>Travesti</item>
+        <item>Outro</item>
+        <item>Prefiro não responder</item>
+    </string-array>
+
+    <string-array name="sexualOrientations">
+        <item>Assexual</item>
+        <item>Bissexual</item>
+        <item>Heretossexual</item>
+        <item>Outro</item>
+        <item>Prefiro não responder</item>
+    </string-array>
+
+    <string-array name="races">
+        <item>Amarelo (a)</item>
+        <item>Branco (a)</item>
+        <item>Indígina</item>
+        <item>Outro</item>
+        <item>Prefiro não responder</item>
+    </string-array>
+
 </resources>
