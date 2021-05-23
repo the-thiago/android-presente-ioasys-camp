@@ -35,12 +35,12 @@ class FirstLoginFragment : Fragment() {
 
     private fun initListeners() {
         binding.btnStartSession.setOnClickListener {
-            changeConstraintLayoutPadding(20)
             findNavController().navigate(FirstLoginFragmentDirections.actionFirstLoginFragmentToLoginFragment())
+            changeConstraintLayoutPadding(20)
         }
         binding.btnNewAccount.setOnClickListener {
-            changeConstraintLayoutPadding(20)
             findNavController().navigate(FirstLoginFragmentDirections.actionFirstLoginFragmentToChooseTypeOfUserFragment())
+            changeConstraintLayoutPadding(20)
         }
     }
 

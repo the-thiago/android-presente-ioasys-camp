@@ -31,10 +31,18 @@
         tools:layout="@layout/fragment_first_login" >
         <action
             android:id="@+id/action_firstLoginFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
         <action
             android:id="@+id/action_firstLoginFragment_to_chooseTypeOfUserFragment"
-            app:destination="@id/chooseTypeOfUserFragment" />
+            app:destination="@id/chooseTypeOfUserFragment"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
     </fragment>
     <fragment
         android:id="@+id/chooseTypeOfUserFragment"
@@ -46,7 +54,11 @@
             app:destination="@id/registerFragment" />
         <action
             android:id="@+id/action_chooseTypeOfUserFragment_to_chooseTypeOfSessionFragment"
-            app:destination="@id/chooseTypeOfSessionFragment" />
+            app:destination="@id/chooseTypeOfSessionFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/chooseTypeOfSessionFragment"
@@ -55,7 +67,11 @@
         tools:layout="@layout/fragment_choose_type_of_session" >
         <action
             android:id="@+id/action_chooseTypeOfSessionFragment_to_nameRegisterFragment"
-            app:destination="@id/nameRegisterFragment" />
+            app:destination="@id/nameRegisterFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/nameRegisterFragment"
@@ -64,7 +80,11 @@
         tools:layout="@layout/fragment_name_register" >
         <action
             android:id="@+id/action_nameRegisterFragment_to_emailRegisterFragment"
-            app:destination="@id/emailRegisterFragment" />
+            app:destination="@id/emailRegisterFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/emailRegisterFragment"
@@ -73,7 +93,11 @@
         tools:layout="@layout/fragment_email_register" >
         <action
             android:id="@+id/action_emailRegisterFragment_to_passwordRegisterFragment"
-            app:destination="@id/passwordRegisterFragment" />
+            app:destination="@id/passwordRegisterFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/passwordRegisterFragment"
@@ -82,7 +106,11 @@
         tools:layout="@layout/fragment_password_register" >
         <action
             android:id="@+id/action_passwordRegisterFragment_to_cepRegisterFragment"
-            app:destination="@id/cepRegisterFragment" />
+            app:destination="@id/cepRegisterFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/cepRegisterFragment"
@@ -91,7 +119,11 @@
         tools:layout="@layout/fragment_cep_register" >
         <action
             android:id="@+id/action_cepRegisterFragment_to_genderFragment"
-            app:destination="@id/genderFragment" />
+            app:destination="@id/genderFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/genderFragment"
@@ -100,7 +132,11 @@
         tools:layout="@layout/fragment_gender" >
         <action
             android:id="@+id/action_genderFragment_to_sexualOrientationFragment"
-            app:destination="@id/sexualOrientationFragment" />
+            app:destination="@id/sexualOrientationFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/sexualOrientationFragment"
@@ -109,7 +145,11 @@
         tools:layout="@layout/fragment_sexual_orientation" >
         <action
             android:id="@+id/action_sexualOrientationFragment_to_raceFragment"
-            app:destination="@id/raceFragment" />
+            app:destination="@id/raceFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/raceFragment"
@@ -118,7 +158,11 @@
         tools:layout="@layout/fragment_race" >
         <action
             android:id="@+id/action_raceFragment_to_interestsFragment"
-            app:destination="@id/interestsFragment" />
+            app:destination="@id/interestsFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/interestsFragment"
@@ -127,7 +171,11 @@
         tools:layout="@layout/fragment_interests" >
         <action
             android:id="@+id/action_interestsFragment_to_finishRegisterFragment"
-            app:destination="@id/finishRegisterFragment" />
+            app:destination="@id/finishRegisterFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/finishRegisterFragment"

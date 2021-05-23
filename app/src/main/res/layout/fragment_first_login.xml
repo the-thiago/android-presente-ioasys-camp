@@ -1,77 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:cardCornerRadius="10dp"
-    android:layout_margin="1dp"
     tools:context=".FirstLoginFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/fragment_first_login_app_logo"
+        android:src="@drawable/ic_logo_presente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.08" />
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="50dp"
-            android:contentDescription="@string/fragment_first_login_app_logo"
-            android:src="@drawable/ic_logo_presente"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.08" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnStartSession"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="26dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_green_background"
+        android:text="@string/fragment_first_login_start_session"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintVertical_bias="0.04000002" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnStartSession"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="26dp"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/button_green_background"
-            android:text="@string/fragment_first_login_start_session"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logo"
-            app:layout_constraintVertical_bias="0.04000002" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnNewAccount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/button_white_background"
+        android:text="@string/fragment_first_login_register"
+        android:textAllCaps="false"
+        android:textColor="@color/primary_text_color"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnStartSession"
+        app:layout_constraintStart_toStartOf="@+id/btnStartSession"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartSession"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnNewAccount"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="26dp"
-            android:background="@drawable/button_white_background"
-            android:text="@string/fragment_first_login_register"
-            android:textAllCaps="false"
-            android:textColor="@color/primary_text_color"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/btnStartSession"
-            app:layout_constraintStart_toStartOf="@+id/btnStartSession"
-            app:layout_constraintTop_toBottomOf="@+id/btnStartSession"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/tvContinueAsGuest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:text="@string/fragment_first_login_continue_as_guest"
+        android:textColor="@color/primary_text_color"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNewAccount"
+        app:layout_constraintVertical_bias="0.3" />
 
-        <TextView
-            android:id="@+id/tvContinueAsGuest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="65dp"
-            android:text="@string/fragment_first_login_continue_as_guest"
-            android:textColor="@color/primary_text_color"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnNewAccount"
-            app:layout_constraintVertical_bias="0.3" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

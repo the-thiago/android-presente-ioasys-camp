@@ -12,8 +12,6 @@ class EmailRegisterFragment : Fragment() {
 
     companion object {
         const val TAG = "EmailRegisterFragment"
-        const val maxProgress = 9000
-        const val currentProgress = 2000
     }
 
     private var _binding: FragmentEmailRegisterBinding? = null

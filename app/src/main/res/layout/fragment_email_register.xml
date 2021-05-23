@@ -1,127 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="1dp"
-    app:cardCornerRadius="10dp"
     tools:context=".LoginFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <TextView
+        android:id="@+id/tvHiPleasure"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginTop="55dp"
+        android:fontFamily="@font/rubik_bold"
+        android:lineHeight="38dp"
+        android:text="Para entrar,"
+        android:textAlignment="textStart"
+        android:textColor="@color/purple_text"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
+
+    <TextView
+        android:id="@+id/tvWhatsYourName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="28dp"
+        android:lineHeight="18dp"
+        android:text="Qual email será utilizado?"
+        android:textAlignment="textStart"
+        android:textColor="@color/light_gray"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHiPleasure"
+        app:layout_constraintVertical_bias="0" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ilName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="55dp"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxStrokeColor="@color/green_input_layout"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/ic_error"
+        app:hintEnabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWhatsYourName"
+        app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/tvHiPleasure"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="28dp"
-            android:layout_marginTop="55dp"
-            android:fontFamily="@font/rubik_bold"
-            android:lineHeight="38dp"
-            android:text="Para entrar,"
-            android:textAlignment="textStart"
-            android:textColor="@color/purple_text"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0" />
-
-        <TextView
-            android:id="@+id/tvWhatsYourName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="28dp"
-            android:lineHeight="18dp"
-            android:text="Qual email será utilizado?"
-            android:textAlignment="textStart"
-            android:textColor="@color/light_gray"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvHiPleasure"
-            app:layout_constraintVertical_bias="0" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/ilName"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="25dp"
-            android:layout_marginTop="55dp"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            app:boxCornerRadiusTopStart="8dp"
-            app:boxStrokeColor="@color/green_input_layout"
-            app:endIconMode="clear_text"
-            app:errorEnabled="true"
-            app:errorIconDrawable="@drawable/ic_error"
-            app:hintEnabled="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvWhatsYourName"
-            app:layout_constraintVertical_bias="0.0">
+            android:hint="caroline@email.com"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="caroline@email.com"
-                android:inputType="textEmailAddress" />
-        </com.google.android.material.textfield.TextInputLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:progress="22"
+        android:progressBackgroundTint="@color/light_gray"
+        android:progressTint="@color/progress_bar_pink"
+        android:scaleY="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/ilName"
+        app:layout_constraintStart_toStartOf="@id/ilName"
+        app:layout_constraintTop_toBottomOf="@id/ilName"
+        app:layout_constraintVertical_bias="0.06" />
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:progress="22"
-            android:progressBackgroundTint="@color/light_gray"
-            android:progressTint="@color/progress_bar_pink"
-            android:scaleY="2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/ilName"
-            app:layout_constraintStart_toStartOf="@id/ilName"
-            app:layout_constraintTop_toBottomOf="@id/ilName"
-            app:layout_constraintVertical_bias="0.06" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnContinueEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="26dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/button_green_background"
+        android:text="Continuar"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/tvBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnContinueEmail"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="26dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="18dp"
-            android:background="@drawable/button_green_background"
-            android:text="Continuar"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@id/tvBack"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/progressBar"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/tvBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:text="Voltar"
+        android:textColor="@color/orange_text_color"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/tvBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="45dp"
-            android:text="Voltar"
-            android:textColor="@color/orange_text_color"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
