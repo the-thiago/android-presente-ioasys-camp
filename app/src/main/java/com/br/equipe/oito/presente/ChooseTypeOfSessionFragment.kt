@@ -49,7 +49,7 @@ class ChooseTypeOfSessionFragment : Fragment() {
         }
         binding.btnStartSession.setOnClickListener {
             if (loginMethod == null) {
-                Toast.makeText(requireContext(), "Selecione alguma opção...", Toast.LENGTH_SHORT)
+                Toast.makeText(requireContext(), "Selecione alguma opção!", Toast.LENGTH_SHORT)
                     .show()
                 return@setOnClickListener
             }
