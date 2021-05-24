@@ -45,13 +45,31 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:paddingStart="80dp"
         android:paddingEnd="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/leftArea"
+        android:layout_width="100dp"
+        android:layout_height="160dp"
+        android:background="@color/totally_transparent"
+        app:layout_constraintBottom_toBottomOf="@id/viewPager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/viewPager" />
+
+    <View
+        android:id="@+id/rightArea"
+        android:layout_width="100dp"
+        android:layout_height="160dp"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/viewPager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/viewPager" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnContinue"

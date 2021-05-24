@@ -48,7 +48,7 @@ class ChooseTypeOfUserFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initListeners()
         binding.viewPager.apply {
-            adapter = SliderUserAdapter(TYPE_USERS_IMAGES, binding.viewPager)
+            adapter = SliderUserAdapter(TYPE_USERS_IMAGES)
             clipToPadding = false
             clipChildren = false
             offscreenPageLimit = 3
@@ -72,6 +72,18 @@ class ChooseTypeOfUserFragment : Fragment() {
         }
         binding.btnBack.setOnClickListener {
             requireActivity().onBackPressed()
+        }
+        binding.leftArea.setOnClickListener {
+            binding.viewPager.let {
+                if (it.currentItem != 0)
+                    it.setCurrentItem(it.currentItem - 1, true)
+            }
+        }
+        binding.rightArea.setOnClickListener {
+            binding.viewPager.let {
+                if (it.currentItem != 2)
+                    it.setCurrentItem(it.currentItem + 1, true)
+            }
         }
     }
 

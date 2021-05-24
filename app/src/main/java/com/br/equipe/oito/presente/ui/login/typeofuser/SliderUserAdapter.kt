@@ -5,10 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
 import com.br.equipe.oito.presente.R
 
-class SliderUserAdapter(private val slideImages: List<Int>, val viewPager2: ViewPager2) :
+class SliderUserAdapter(private val slideImages: List<Int>) :
     RecyclerView.Adapter<SliderUserAdapter.SliderViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SliderViewHolder {
