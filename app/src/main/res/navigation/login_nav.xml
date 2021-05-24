@@ -87,7 +87,11 @@
             app:popExitAnim="@anim/to_right" />
         <action
             android:id="@+id/action_nameRegisterFragment_to_companyFragment"
-            app:destination="@id/companyFragment" />
+            app:destination="@id/companyFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/emailRegisterFragment"
@@ -114,6 +118,13 @@
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
             app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_passwordRegisterFragment_to_numberOfEmployeesFragment"
+            app:destination="@id/numberOfEmployeesFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/cepRegisterFragment"
@@ -129,7 +140,11 @@
             app:popExitAnim="@anim/to_right" />
         <action
             android:id="@+id/action_cepRegisterFragment_to_educationFragment"
-            app:destination="@id/educationFragment" />
+            app:destination="@id/educationFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/genderFragment"
@@ -199,7 +214,11 @@
         tools:layout="@layout/fragment_company" >
         <action
             android:id="@+id/action_companyFragment_to_emailRegisterFragment"
-            app:destination="@id/emailRegisterFragment" />
+            app:destination="@id/emailRegisterFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/educationFragment"
@@ -208,11 +227,23 @@
         tools:layout="@layout/fragment_education" >
         <action
             android:id="@+id/action_educationFragment_to_finishRegisterFragment"
-            app:destination="@id/finishRegisterFragment" />
+            app:destination="@id/finishRegisterFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/numberOfEmployeesFragment"
         android:name="com.br.equipe.oito.presente.NumberOfEmployeesFragment"
         android:label="fragment_number_of_employees"
-        tools:layout="@layout/fragment_number_of_employees" />
+        tools:layout="@layout/fragment_number_of_employees" >
+        <action
+            android:id="@+id/action_numberOfEmployeesFragment_to_interestsFragment"
+            app:destination="@id/interestsFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
 </navigation>

@@ -4,9 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.br.equipe.oito.presente.databinding.FragmentNameRegisterBinding
+import com.br.equipe.oito.presente.ui.login.typeofuser.ChooseTypeOfUserFragment
+import com.br.equipe.oito.presente.ui.login.typeofuser.ChooseTypeOfUserFragment.Companion.COMPANY_TYPE
+import com.br.equipe.oito.presente.ui.login.typeofuser.ChooseTypeOfUserFragment.Companion.TUTOR_TYPE
+import com.br.equipe.oito.presente.viewmodel.NewUserViewModel
 
 class NameRegisterFragment : Fragment() {
 
@@ -19,6 +25,11 @@ class NameRegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentNameRegisterBinding.inflate(inflater, container, false)
+        val model = ViewModelProvider(requireActivity()).get(NewUserViewModel::class.java)
+        if (model.typeOfUser.value == COMPANY_TYPE) {
+            binding.tvWhatsYourName.text = "Qual o nome da empresa?"
+            binding.etName.hint = "Apperture Science INC."
+        }
         return binding.root
     }
 
@@ -38,7 +49,12 @@ class NameRegisterFragment : Fragment() {
         }
         binding.btnContinueEmail.setOnClickListener {
             binding.progressBar.apply {
-                findNavController().navigate(NameRegisterFragmentDirections.actionNameRegisterFragmentToEmailRegisterFragment())
+                val model = ViewModelProvider(requireActivity()).get(NewUserViewModel::class.java)
+                if (model.typeOfUser.value == TUTOR_TYPE) {
+                    findNavController().navigate(NameRegisterFragmentDirections.actionNameRegisterFragmentToCompanyFragment())
+                } else {
+                    findNavController().navigate(NameRegisterFragmentDirections.actionNameRegisterFragmentToEmailRegisterFragment())
+                }
             }
         }
     }

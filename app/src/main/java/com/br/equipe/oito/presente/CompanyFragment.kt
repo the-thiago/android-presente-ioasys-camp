@@ -1,12 +1,12 @@
 package com.br.equipe.oito.presente
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.br.equipe.oito.presente.databinding.FragmentCompanyBinding
-import com.br.equipe.oito.presente.databinding.FragmentGenderBinding
 
 class CompanyFragment : Fragment() {
 
@@ -32,7 +32,12 @@ class CompanyFragment : Fragment() {
     }
 
     private fun initListener() {
-
+        binding.btnContinueCompany.setOnClickListener {
+            findNavController().navigate(CompanyFragmentDirections.actionCompanyFragmentToEmailRegisterFragment())
+        }
+        binding.tvBack.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
     }
 
 }

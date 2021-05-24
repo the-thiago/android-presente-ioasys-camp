@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.br.equipe.oito.presente.databinding.FragmentEducationBinding
 
 class EducationFragment : Fragment() {
@@ -49,6 +50,12 @@ class EducationFragment : Fragment() {
         }
         binding.ivPlus.setOnClickListener {
             onPlusClicked()
+        }
+        binding.tvBack.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+        binding.btnFinishRegister.setOnClickListener {
+            findNavController().navigate(EducationFragmentDirections.actionEducationFragmentToFinishRegisterFragment())
         }
     }
 

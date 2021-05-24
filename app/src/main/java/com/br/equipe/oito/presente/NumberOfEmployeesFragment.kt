@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.br.equipe.oito.presente.databinding.FragmentNumberOfEmployeesBinding
 
 class NumberOfEmployeesFragment : Fragment() {
@@ -41,6 +42,12 @@ class NumberOfEmployeesFragment : Fragment() {
         }
         binding.ivPlus.setOnClickListener {
             onPlusClicked()
+        }
+        binding.tvBack.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+        binding.btnFinishRegister.setOnClickListener {
+            findNavController().navigate(NumberOfEmployeesFragmentDirections.actionNumberOfEmployeesFragmentToInterestsFragment())
         }
     }
 

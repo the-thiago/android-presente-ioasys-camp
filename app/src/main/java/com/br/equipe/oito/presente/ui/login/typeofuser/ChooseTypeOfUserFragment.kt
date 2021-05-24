@@ -5,12 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.br.equipe.oito.presente.R
 import com.br.equipe.oito.presente.databinding.FragmentChooseTypeOfUserBinding
+import com.br.equipe.oito.presente.viewmodel.NewUserViewModel
 import kotlin.math.abs
 
 class ChooseTypeOfUserFragment : Fragment() {
@@ -64,9 +66,9 @@ class ChooseTypeOfUserFragment : Fragment() {
     private fun initListeners() {
         binding.btnContinue.setOnClickListener {
             val typeOfUserSelected = binding.viewPager.currentItem
-            if (typeOfUserSelected == APPRENTICE_TYPE) {
-                findNavController().navigate(ChooseTypeOfUserFragmentDirections.actionChooseTypeOfUserFragmentToChooseTypeOfSessionFragment())
-            }
+            val model = ViewModelProvider(requireActivity()).get(NewUserViewModel::class.java)
+            model.typeOfUser.postValue(typeOfUserSelected)
+            findNavController().navigate(ChooseTypeOfUserFragmentDirections.actionChooseTypeOfUserFragmentToChooseTypeOfSessionFragment())
         }
         binding.btnBack.setOnClickListener {
             requireActivity().onBackPressed()

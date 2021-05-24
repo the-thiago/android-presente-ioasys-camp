@@ -242,7 +242,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="16dp"
-        android:progress="88"
+        android:progress="80"
         android:progressBackgroundTint="@color/light_gray"
         android:progressTint="@color/progress_bar_pink"
         android:scaleY="2"
