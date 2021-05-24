@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/chooseTypeOfUserFragment"
-        android:name="com.br.equipe.oito.presente.ChooseTypeOfUserFragment"
+        android:name="com.br.equipe.oito.presente.ui.login.typeofuser.ChooseTypeOfUserFragment"
         android:label="fragment_choose_type_of_user"
         tools:layout="@layout/fragment_choose_type_of_user" >
         <action

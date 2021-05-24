@@ -42,25 +42,32 @@
         app:layout_constraintTop_toBottomOf="@id/tvHello"
         app:layout_constraintVertical_bias="0" />
 
-
-
-
-
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="80dp"
+        android:paddingEnd="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnContinue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="26dp"
-        android:layout_marginTop="350dp"
         android:background="@drawable/button_green_background"
         android:text="Selecionar e continuar"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSwipeInformation" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSwipeInformation"
+        app:layout_constraintVertical_bias="0.75" />
 
     <TextView
         android:id="@+id/btnBack"
