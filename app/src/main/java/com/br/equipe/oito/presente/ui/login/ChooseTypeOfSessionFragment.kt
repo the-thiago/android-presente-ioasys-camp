@@ -1,4 +1,4 @@
-package com.br.equipe.oito.presente
+package com.br.equipe.oito.presente.ui.login
 
 import android.os.Bundle
 import android.view.LayoutInflater

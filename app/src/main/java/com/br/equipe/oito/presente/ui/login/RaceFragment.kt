@@ -1,4 +1,4 @@
-package com.br.equipe.oito.presente
+package com.br.equipe.oito.presente.ui.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,18 +8,19 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.br.equipe.oito.presente.databinding.FragmentGenderBinding
+import com.br.equipe.oito.presente.R
+import com.br.equipe.oito.presente.databinding.FragmentRaceBinding
 
-class GenderFragment : Fragment() {
+class RaceFragment : Fragment() {
 
-    private var _binding: FragmentGenderBinding? = null
+    private var _binding: FragmentRaceBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentGenderBinding.inflate(inflater, container, false)
+        _binding = FragmentRaceBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -39,14 +40,14 @@ class GenderFragment : Fragment() {
     }
 
     private fun initDropdownGenders() {
-        val items = resources.getStringArray(R.array.genders)
+        val items = resources.getStringArray(R.array.races)
         val adapter = ArrayAdapter(requireContext(), R.layout.list_item_dropdown, items)
-        (binding.ilGender.editText as? AutoCompleteTextView)?.setAdapter(adapter)
+        (binding.ilRace.editText as? AutoCompleteTextView)?.setAdapter(adapter)
     }
 
     private fun initListener() {
-        binding.btnContinueGender.setOnClickListener {
-            findNavController().navigate(GenderFragmentDirections.actionGenderFragmentToSexualOrientationFragment())
+        binding.btnContinueRace.setOnClickListener {
+            findNavController().navigate(RaceFragmentDirections.actionRaceFragmentToInterestsFragment())
         }
         binding.tvBack.setOnClickListener {
             requireActivity().onBackPressed()

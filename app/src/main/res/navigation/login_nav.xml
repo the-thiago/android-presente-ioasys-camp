@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.br.equipe.oito.presente.LoginFragment"
+        android:name="com.br.equipe.oito.presente.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.br.equipe.oito.presente.RegisterFragment"
+        android:name="com.br.equipe.oito.presente.ui.login.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
     <activity
@@ -26,7 +26,7 @@
         tools:layout="@layout/activity_home" />
     <fragment
         android:id="@+id/firstLoginFragment"
-        android:name="com.br.equipe.oito.presente.FirstLoginFragment"
+        android:name="com.br.equipe.oito.presente.ui.login.FirstLoginFragment"
         android:label="fragment_first_login"
         tools:layout="@layout/fragment_first_login" >
         <action
@@ -62,7 +62,7 @@
     </fragment>
     <fragment
         android:id="@+id/chooseTypeOfSessionFragment"
-        android:name="com.br.equipe.oito.presente.ChooseTypeOfSessionFragment"
+        android:name="com.br.equipe.oito.presente.ui.login.ChooseTypeOfSessionFragment"
         android:label="fragment_choose_type_of_session"
         tools:layout="@layout/fragment_choose_type_of_session" >
         <action
@@ -75,7 +75,7 @@
     </fragment>
     <fragment
         android:id="@+id/nameRegisterFragment"
-        android:name="com.br.equipe.oito.presente.NameRegisterFragment"
+        android:name="com.br.equipe.oito.presente.ui.login.NameRegisterFragment"
         android:label="fragment_name_register"
         tools:layout="@layout/fragment_name_register" >
         <action
@@ -95,7 +95,7 @@
     </fragment>
     <fragment
         android:id="@+id/emailRegisterFragment"
-        android:name="com.br.equipe.oito.presente.EmailRegisterFragment"
+        android:name="com.br.equipe.oito.presente.ui.login.EmailRegisterFragment"
         android:label="fragment_email_register"
         tools:layout="@layout/fragment_email_register" >
         <action
@@ -108,7 +108,7 @@
     </fragment>
     <fragment
         android:id="@+id/passwordRegisterFragment"
-        android:name="com.br.equipe.oito.presente.PasswordRegisterFragment"
+        android:name="com.br.equipe.oito.presente.ui.login.PasswordRegisterFragment"
         android:label="fragment_password_register"
         tools:layout="@layout/fragment_password_register" >
         <action
@@ -128,7 +128,7 @@
     </fragment>
     <fragment
         android:id="@+id/cepRegisterFragment"
-        android:name="com.br.equipe.oito.presente.CepRegisterFragment"
+        android:name="com.br.equipe.oito.presente.ui.login.CepRegisterFragment"
         android:label="fragment_cep_register"
         tools:layout="@layout/fragment_cep_register" >
         <action
@@ -148,7 +148,7 @@
     </fragment>
     <fragment
         android:id="@+id/genderFragment"
-        android:name="com.br.equipe.oito.presente.GenderFragment"
+        android:name="com.br.equipe.oito.presente.ui.login.GenderFragment"
         android:label="fragment_gender"
         tools:layout="@layout/fragment_gender" >
         <action
@@ -161,7 +161,7 @@
     </fragment>
     <fragment
         android:id="@+id/sexualOrientationFragment"
-        android:name="com.br.equipe.oito.presente.SexualOrientationFragment"
+        android:name="com.br.equipe.oito.presente.ui.login.SexualOrientationFragment"
         android:label="fragment_sexual_orientation"
         tools:layout="@layout/fragment_sexual_orientation" >
         <action
@@ -174,7 +174,7 @@
     </fragment>
     <fragment
         android:id="@+id/raceFragment"
-        android:name="com.br.equipe.oito.presente.RaceFragment"
+        android:name="com.br.equipe.oito.presente.ui.login.RaceFragment"
         android:label="fragment_race"
         tools:layout="@layout/fragment_race" >
         <action
@@ -187,7 +187,7 @@
     </fragment>
     <fragment
         android:id="@+id/interestsFragment"
-        android:name="com.br.equipe.oito.presente.InterestsFragment"
+        android:name="com.br.equipe.oito.presente.ui.login.InterestsFragment"
         android:label="fragment_interests"
         tools:layout="@layout/fragment_interests" >
         <action
@@ -200,7 +200,7 @@
     </fragment>
     <fragment
         android:id="@+id/finishRegisterFragment"
-        android:name="com.br.equipe.oito.presente.FinishRegisterFragment"
+        android:name="com.br.equipe.oito.presente.ui.login.FinishRegisterFragment"
         android:label="fragment_finish_register"
         tools:layout="@layout/fragment_finish_register" >
         <action
@@ -209,7 +209,7 @@
     </fragment>
     <fragment
         android:id="@+id/companyFragment"
-        android:name="com.br.equipe.oito.presente.CompanyFragment"
+        android:name="com.br.equipe.oito.presente.ui.login.CompanyFragment"
         android:label="fragment_company"
         tools:layout="@layout/fragment_company" >
         <action
@@ -222,7 +222,7 @@
     </fragment>
     <fragment
         android:id="@+id/educationFragment"
-        android:name="com.br.equipe.oito.presente.EducationFragment"
+        android:name="com.br.equipe.oito.presente.ui.login.EducationFragment"
         android:label="fragment_education"
         tools:layout="@layout/fragment_education" >
         <action
@@ -235,7 +235,7 @@
     </fragment>
     <fragment
         android:id="@+id/numberOfEmployeesFragment"
-        android:name="com.br.equipe.oito.presente.NumberOfEmployeesFragment"
+        android:name="com.br.equipe.oito.presente.ui.login.NumberOfEmployeesFragment"
         android:label="fragment_number_of_employees"
         tools:layout="@layout/fragment_number_of_employees" >
         <action

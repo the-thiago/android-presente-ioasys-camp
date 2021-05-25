@@ -1,4 +1,4 @@
-package com.br.equipe.oito.presente
+package com.br.equipe.oito.presente.ui.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,20 +7,23 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.br.equipe.oito.presente.databinding.FragmentPasswordRegisterBinding
-import com.br.equipe.oito.presente.ui.login.typeofuser.ChooseTypeOfUserFragment
+import com.br.equipe.oito.presente.databinding.FragmentCepRegisterBinding
+import com.br.equipe.oito.presente.ui.login.typeofuser.ChooseTypeOfUserFragment.Companion.TUTOR_TYPE
+import com.br.equipe.oito.presente.util.Mask
 import com.br.equipe.oito.presente.viewmodel.NewUserViewModel
 
-class PasswordRegisterFragment : Fragment() {
+class CepRegisterFragment : Fragment() {
 
-    private var _binding: FragmentPasswordRegisterBinding? = null
+    private var _binding: FragmentCepRegisterBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentPasswordRegisterBinding.inflate(inflater, container, false)
+        _binding = FragmentCepRegisterBinding.inflate(inflater, container, false)
+        val model = ViewModelProvider(requireActivity()).get(NewUserViewModel::class.java)
+        if (model.typeOfUser.value == TUTOR_TYPE) binding.progressBar.progress = 65
         return binding.root
     }
 
@@ -35,12 +38,13 @@ class PasswordRegisterFragment : Fragment() {
     }
 
     private fun initListener() {
-        binding.btnContinuePassword.setOnClickListener {
+        binding.etCep.addTextChangedListener(Mask.insert(Mask.FORMAT_CEP, binding.etCep))
+        binding.btnContinueCep.setOnClickListener {
             val model = ViewModelProvider(requireActivity()).get(NewUserViewModel::class.java)
-            if (model.typeOfUser.value == ChooseTypeOfUserFragment.COMPANY_TYPE) {
-                findNavController().navigate(PasswordRegisterFragmentDirections.actionPasswordRegisterFragmentToNumberOfEmployeesFragment())
+            if (model.typeOfUser.value == TUTOR_TYPE) {
+                findNavController().navigate(CepRegisterFragmentDirections.actionCepRegisterFragmentToEducationFragment())
             } else {
-                findNavController().navigate(PasswordRegisterFragmentDirections.actionPasswordRegisterFragmentToCepRegisterFragment())
+                findNavController().navigate(CepRegisterFragmentDirections.actionCepRegisterFragmentToGenderFragment())
             }
         }
         binding.tvBack.setOnClickListener {

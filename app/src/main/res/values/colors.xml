@@ -26,4 +26,6 @@
     <color name="green_back_end">#287F42</color>
     <color name="pink_project_management">#F193B7</color>
     <color name="black_text">#3B3B3B</color>
+    <color name="bottom_nav_gray">#F2F2F2</color>
+    <color name="non_selected_icon">#C1C1C1</color>
 </resources>
