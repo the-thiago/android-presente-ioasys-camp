@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +13,7 @@ import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.br.equipe.oito.presente.R
 import com.br.equipe.oito.presente.databinding.FragmentChooseTypeOfUserBinding
+import com.br.equipe.oito.presente.model.User
 import com.br.equipe.oito.presente.viewmodel.NewUserViewModel
 import kotlin.math.abs
 
@@ -27,6 +29,8 @@ class ChooseTypeOfUserFragment : Fragment() {
         const val TUTOR_TYPE = 1
         const val COMPANY_TYPE = 2
     }
+
+    private val userViewModel: NewUserViewModel by activityViewModels()
 
     private var _binding: FragmentChooseTypeOfUserBinding? = null
     private val binding get() = _binding!!
@@ -68,6 +72,8 @@ class ChooseTypeOfUserFragment : Fragment() {
             val typeOfUserSelected = binding.viewPager.currentItem
             val model = ViewModelProvider(requireActivity()).get(NewUserViewModel::class.java)
             model.typeOfUser.postValue(typeOfUserSelected)
+            // new view model bellow
+            userViewModel.setUser(User())
             findNavController().navigate(ChooseTypeOfUserFragmentDirections.actionChooseTypeOfUserFragmentToChooseTypeOfSessionFragment())
         }
         binding.btnBack.setOnClickListener {

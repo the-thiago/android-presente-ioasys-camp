@@ -4,24 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.br.equipe.oito.presente.R
 import com.br.equipe.oito.presente.databinding.FragmentInterestsBinding
+import com.br.equipe.oito.presente.viewmodel.NewUserViewModel
 
 class InterestsFragment : Fragment() {
 
     private var _binding: FragmentInterestsBinding? = null
     private val binding get() = _binding!!
-
-    private var isAndroidCardEnabled = false
-    private var isBackEndCardEnabled = false
-    private var isFrontEndCardEnabled = false
-    private var isProjectManagementCardEnabled = false
-    private var isIosCardEnabled = false
-    private var isWorkTipsCardEnabled = false
-    private var isUxUiCardEnabled = false
+    private val userViewModel: NewUserViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +35,50 @@ class InterestsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initListener()
+        initObservers()
+    }
+
+    private fun initObservers() {
+        userViewModel.user.observe(viewLifecycleOwner) { newUser ->
+            when (newUser.android) {
+                true -> updateBackgroundColor(binding.tvAndroid, R.color.purple_android)
+                false -> updateBackgroundColor(binding.tvAndroid, R.color.progress_bar_gray)
+            }
+            when (newUser.backEnd) {
+                true -> updateBackgroundColor(binding.tvBackEnd, R.color.green_back_end)
+                false -> updateBackgroundColor(binding.tvBackEnd, R.color.progress_bar_gray)
+            }
+            when (newUser.frontEnd) {
+                true -> updateBackgroundColor(binding.tvFrontEnd, R.color.orange_front_end)
+                false -> updateBackgroundColor(binding.tvFrontEnd, R.color.progress_bar_gray)
+            }
+            when (newUser.projectManager) {
+                true -> updateBackgroundColor(
+                    binding.tvProjectManagement,
+                    R.color.pink_project_management
+                )
+                false -> updateBackgroundColor(
+                    binding.tvProjectManagement,
+                    R.color.progress_bar_gray
+                )
+            }
+            when (newUser.ios) {
+                true -> updateBackgroundColor(binding.tvIos, R.color.green_ios)
+                false -> updateBackgroundColor(binding.tvIos, R.color.progress_bar_gray)
+            }
+            when (newUser.workTips) {
+                true -> updateBackgroundColor(binding.tvWorkTips, R.color.light_blue_work_tips)
+                false -> updateBackgroundColor(binding.tvWorkTips, R.color.progress_bar_gray)
+            }
+            when (newUser.uxUi) {
+                true -> updateBackgroundColor(binding.tvUxUi, R.color.yellow_ux_ui)
+                false -> updateBackgroundColor(binding.tvUxUi, R.color.progress_bar_gray)
+            }
+        }
+    }
+
+    private fun updateBackgroundColor(tv: TextView, color: Int) {
+        tv.setBackgroundColor(ContextCompat.getColor(requireContext(), color))
     }
 
     private fun initListener() {
@@ -53,136 +93,45 @@ class InterestsFragment : Fragment() {
 
     private fun cardViewListeners() {
         binding.androidCard.setOnClickListener {
-            isAndroidCardEnabled = if (isAndroidCardEnabled) {
-                binding.tvAndroid.setBackgroundColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.progress_bar_gray
-                    )
-                )
-                false
-            } else {
-                binding.tvAndroid.setBackgroundColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.purple_android
-                    )
-                )
-                true
+            when (userViewModel.user.value?.android) {
+                true -> userViewModel.updateAndroidInterest(false)
+                else -> userViewModel.updateAndroidInterest(true)
             }
         }
         binding.backEndCard.setOnClickListener {
-            isBackEndCardEnabled = if (isBackEndCardEnabled) {
-                binding.tvBackEnd.setBackgroundColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.progress_bar_gray
-                    )
-                )
-                false
-            } else {
-                binding.tvBackEnd.setBackgroundColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.green_back_end
-                    )
-                )
-                true
+            when (userViewModel.user.value?.backEnd) {
+                true -> userViewModel.updateBackEndInterest(false)
+                else -> userViewModel.updateBackEndInterest(true)
             }
         }
         binding.frontEndCard.setOnClickListener {
-            isFrontEndCardEnabled = if (isFrontEndCardEnabled) {
-                binding.tvFrontEnd.setBackgroundColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.progress_bar_gray
-                    )
-                )
-                false
-            } else {
-                binding.tvFrontEnd.setBackgroundColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.orange_front_end
-                    )
-                )
-                true
+            when (userViewModel.user.value?.frontEnd) {
+                true -> userViewModel.updateFrontEndInterest(false)
+                else -> userViewModel.updateFrontEndInterest(true)
             }
         }
         binding.projectManagementCard.setOnClickListener {
-            isProjectManagementCardEnabled = if (isProjectManagementCardEnabled) {
-                binding.tvProjectManagement.setBackgroundColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.progress_bar_gray
-                    )
-                )
-                false
-            } else {
-                binding.tvProjectManagement.setBackgroundColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.pink_project_management
-                    )
-                )
-                true
+            when (userViewModel.user.value?.projectManager) {
+                true -> userViewModel.updateProjectManagementInterest(false)
+                else -> userViewModel.updateProjectManagementInterest(true)
             }
         }
         binding.iosCard.setOnClickListener {
-            isIosCardEnabled = if (isIosCardEnabled) {
-                binding.tvIos.setBackgroundColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.progress_bar_gray
-                    )
-                )
-                false
-            } else {
-                binding.tvIos.setBackgroundColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.green_ios
-                    )
-                )
-                true
+            when (userViewModel.user.value?.ios) {
+                true -> userViewModel.updateIosInterest(false)
+                else -> userViewModel.updateIosInterest(true)
             }
         }
         binding.workTipsCard.setOnClickListener {
-            isWorkTipsCardEnabled = if (isWorkTipsCardEnabled) {
-                binding.tvWorkTips.setBackgroundColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.progress_bar_gray
-                    )
-                )
-                false
-            } else {
-                binding.tvWorkTips.setBackgroundColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.light_blue_work_tips
-                    )
-                )
-                true
+            when (userViewModel.user.value?.workTips) {
+                true -> userViewModel.updateWorkTipsInterest(false)
+                else -> userViewModel.updateWorkTipsInterest(true)
             }
         }
         binding.uxUiCard.setOnClickListener {
-            isUxUiCardEnabled = if (isUxUiCardEnabled) {
-                binding.tvUxUi.setBackgroundColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.progress_bar_gray
-                    )
-                )
-                false
-            } else {
-                binding.tvUxUi.setBackgroundColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.yellow_ux_ui
-                    )
-                )
-                true
+            when (userViewModel.user.value?.uxUi) {
+                true -> userViewModel.updateUxUiInterest(false)
+                else -> userViewModel.updateUxUiInterest(true)
             }
         }
     }
