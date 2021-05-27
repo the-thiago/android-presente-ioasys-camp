@@ -7,11 +7,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.br.equipe.oito.presente.databinding.FragmentPasswordRegisterBinding
-import com.br.equipe.oito.presente.ui.login.typeofuser.ChooseTypeOfUserFragment
 import com.br.equipe.oito.presente.viewmodel.NewUserViewModel
+import java.util.*
 
 class PasswordRegisterFragment : Fragment() {
 
@@ -40,24 +39,38 @@ class PasswordRegisterFragment : Fragment() {
 
     private fun initObserver() {
         userViewModel.user.observe(viewLifecycleOwner) {
-            when (it.password) {
-                "invalid" -> {
-                    Toast.makeText(
-                        requireContext(),
-                        "Senha não atende aos requesitos mínimos!",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-                else -> {
-                    findNavController().navigate(PasswordRegisterFragmentDirections.actionPasswordRegisterFragmentToCepRegisterFragment())
-                }
+            binding.etPasswordRegister.setText(it.password)
+        }
+    }
+
+    private fun isValidPassword(password: String): Boolean {
+        val specialCharactersString = "!@#$%&*()'+,-./:;<=>?[]^_`{|}"
+        var hasSpecialCharacters = false
+        password.forEach { char ->
+            if (specialCharactersString.contains(char)) {
+                hasSpecialCharacters = true
+                return@forEach
             }
         }
+        if (password.length < 7 || password == password.toLowerCase(Locale.ROOT) || !hasSpecialCharacters) {
+            Toast.makeText(
+                requireContext(),
+                "Senha não atende aos requesitos mínimos!",
+                Toast.LENGTH_LONG
+            ).show()
+            return false
+        }
+        return true
     }
 
     private fun initListener() {
         binding.btnContinuePassword.setOnClickListener {
-            userViewModel.updatePassword(binding.etPasswordRegister.text.toString())
+            val password = binding.etPasswordRegister.text.toString()
+            if (isValidPassword(password)) {
+                userViewModel.updatePassword(password)
+                findNavController().navigate(PasswordRegisterFragmentDirections.actionPasswordRegisterFragmentToCepRegisterFragment())
+            }
+//            userViewModel.updatePassword(password)
 //            val model = ViewModelProvider(requireActivity()).get(NewUserViewModel::class.java)
 //            if (model.typeOfUser.value == ChooseTypeOfUserFragment.COMPANY_TYPE) {
 //                findNavController().navigate(PasswordRegisterFragmentDirections.actionPasswordRegisterFragmentToNumberOfEmployeesFragment())

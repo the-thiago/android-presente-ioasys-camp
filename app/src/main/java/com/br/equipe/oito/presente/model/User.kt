@@ -4,10 +4,10 @@ data class User(
     val typeOfUser: String = "",
     var name: String = "",
     var email: String = "",
-    var password: String = "invalid",
+    var password: String = "",
     var locationCity: String = "",
     var locationState: String = "",
-    var cep: String = "", // Dont used in backend
+    var cep: String = "", // Don't used in backend
     var gender: String = "",
     var sexualOrientation: String = "",
     var race: String = "",

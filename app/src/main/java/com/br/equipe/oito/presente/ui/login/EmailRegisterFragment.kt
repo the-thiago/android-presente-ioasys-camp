@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.br.equipe.oito.presente.databinding.FragmentEmailRegisterBinding
+import com.br.equipe.oito.presente.viewmodel.NewUserViewModel
 
 class EmailRegisterFragment : Fragment() {
 
@@ -16,6 +19,7 @@ class EmailRegisterFragment : Fragment() {
 
     private var _binding: FragmentEmailRegisterBinding? = null
     private val binding get() = _binding!!
+    private val userViewModel: NewUserViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,11 +37,24 @@ class EmailRegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initListener()
+        setObservers()
+    }
+
+    private fun setObservers() {
+        userViewModel.user.observe(viewLifecycleOwner) {
+            binding.etEmail.setText(it.email)
+        }
     }
 
     private fun initListener() {
         binding.btnContinueEmail.setOnClickListener {
-            findNavController().navigate(EmailRegisterFragmentDirections.actionEmailRegisterFragmentToPasswordRegisterFragment())
+            val email = binding.etEmail.text.toString()
+            if (email.contains("@")) {
+                userViewModel.updateEmail(email)
+                findNavController().navigate(EmailRegisterFragmentDirections.actionEmailRegisterFragmentToPasswordRegisterFragment())
+            } else {
+                Toast.makeText(requireContext(), "Email inválido!", Toast.LENGTH_LONG).show()
+            }
         }
         binding.tvBack.setOnClickListener {
             requireActivity().onBackPressed()

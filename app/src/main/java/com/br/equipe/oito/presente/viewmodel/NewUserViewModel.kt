@@ -11,7 +11,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import retrofit2.Response
-import java.util.*
 
 class NewUserViewModel : ViewModel() {
 
@@ -28,20 +27,18 @@ class NewUserViewModel : ViewModel() {
         _user.value = user
     }
 
+    fun updateName(name: String) {
+        _user.value?.name = name
+        notifyObservers()
+    }
+
+    fun updateEmail(email: String) {
+        _user.value?.email = email
+        notifyObservers()
+    }
+
     fun updatePassword(password: String) {
-        val specialCharactersString = "!@#$%&*()'+,-./:;<=>?[]^_`{|}"
-        var hasSpecialCharacters = false
-        password.forEach { char ->
-            if (specialCharactersString.contains(char)) {
-                hasSpecialCharacters = true
-                return@forEach
-            }
-        }
-        if (password.length < 7 || password == password.toLowerCase(Locale.ROOT) || !hasSpecialCharacters) {
-            _user.value?.password = "invalid"
-        } else {
-            _user.value?.password = password
-        }
+        _user.value?.password = password
         notifyObservers()
     }
 
@@ -52,8 +49,12 @@ class NewUserViewModel : ViewModel() {
                 cepDetails.body().let {
                     _user.value?.locationCity = it?.localidade ?: ""
                     _user.value?.locationState = it?.localidade ?: ""
-                    user.value?.cep = cep
+                    _user.value?.cep = cep
                 }
+            } else {
+                _user.value?.locationCity = ""
+                _user.value?.locationState = ""
+                _user.value?.cep = ""
             }
             withContext(Dispatchers.Main) {
                 notifyObservers()

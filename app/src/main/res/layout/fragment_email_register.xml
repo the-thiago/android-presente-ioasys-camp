@@ -42,7 +42,7 @@
         app:layout_constraintVertical_bias="0" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ilName"
+        android:id="@+id/ilEmail"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etName"
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="caroline@email.com"
@@ -81,9 +81,9 @@
         android:progressTint="@color/progress_bar_pink"
         android:scaleY="2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/ilName"
-        app:layout_constraintStart_toStartOf="@id/ilName"
-        app:layout_constraintTop_toBottomOf="@id/ilName"
+        app:layout_constraintEnd_toEndOf="@id/ilEmail"
+        app:layout_constraintStart_toStartOf="@id/ilEmail"
+        app:layout_constraintTop_toBottomOf="@id/ilEmail"
         app:layout_constraintVertical_bias="0.06" />
 
     <androidx.appcompat.widget.AppCompatButton
