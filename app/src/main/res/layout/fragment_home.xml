@@ -66,7 +66,9 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </androidx.appcompat.widget.Toolbar>
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -128,30 +130,268 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/teste"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@color/black"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardCourses"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                app:cardCornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/contentLayout" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/teste2"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginTop="200dp"
-                android:background="@color/green_input_layout"
-                app:layout_constraintTop_toBottomOf="@id/teste" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/teste3"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginTop="200dp"
-                android:background="@color/orange_text_color"
-                app:layout_constraintTop_toBottomOf="@id/teste2" />
+                    <TextView
+                        android:id="@+id/tvKindOfContent1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="24dp"
+                        android:lineHeight="24dp"
+                        android:text="Cursos"
+                        android:textColor="@color/green_back_end"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDescription1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="24dp"
+                        android:layout_marginTop="4dp"
+                        android:lineHeight="16dp"
+                        android:text="Confira cursos livres e temporários"
+                        android:textColor="@color/primary_text_color"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvKindOfContent1" />
+
+                    <ImageView
+                        android:id="@+id/ivFirstCourse1"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="4dp"
+                        android:src="@drawable/button_green_background"
+                        app:layout_constraintEnd_toStartOf="@+id/ivSecondCourse1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDescription1" />
+
+                    <ImageView
+                        android:id="@+id/ivSecondCourse1"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="24dp"
+                        android:src="@drawable/button_green_background"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivFirstCourse1"
+                        app:layout_constraintTop_toTopOf="@+id/ivFirstCourse1" />
+
+                    <TextView
+                        android:id="@+id/tvFirstCourseTitle1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:maxLines="2"
+                        android:text="Teoria das cores"
+                        android:textColor="@color/light_gray"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/ivFirstCourse1"
+                        app:layout_constraintStart_toStartOf="@+id/ivFirstCourse1"
+                        app:layout_constraintTop_toBottomOf="@id/ivFirstCourse1" />
+
+                    <TextView
+                        android:id="@+id/tvSecondCourseTitle1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:maxLines="2"
+                        android:text="Como montar um briefing de UX writing"
+                        android:textColor="@color/light_gray"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/ivSecondCourse1"
+                        app:layout_constraintStart_toStartOf="@+id/ivSecondCourse1"
+                        app:layout_constraintTop_toBottomOf="@id/ivSecondCourse1" />
+
+                    <TextView
+                        android:id="@+id/tvFirstCourseCategory1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="15dp"
+                        android:lineHeight="14dp"
+                        android:maxLines="1"
+                        android:text="Teoria do Design"
+                        android:textColor="@color/progress_bar_gray"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/ivFirstCourse1"
+                        app:layout_constraintStart_toStartOf="@+id/ivFirstCourse1"
+                        app:layout_constraintTop_toBottomOf="@+id/tvFirstCourseTitle1"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/tvSecondCourseCategory1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="15dp"
+                        android:lineHeight="14dp"
+                        android:maxLines="1"
+                        android:text="Ux Writing"
+                        android:textColor="@color/progress_bar_gray"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/ivSecondCourse1"
+                        app:layout_constraintStart_toStartOf="@+id/ivSecondCourse1"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSecondCourseTitle1"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardJobs"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardCourses">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvKindOfContent2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="24dp"
+                        android:lineHeight="24dp"
+                        android:text="Blog"
+                        android:textColor="@color/progress_bar_pink"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDescription2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="24dp"
+                        android:layout_marginTop="4dp"
+                        android:lineHeight="16dp"
+                        android:text="Leituras complementares"
+                        android:textColor="@color/primary_text_color"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvKindOfContent2" />
+
+                    <ImageView
+                        android:id="@+id/ivFirstCourse2"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="4dp"
+                        android:src="@drawable/button_green_background"
+                        app:layout_constraintEnd_toStartOf="@+id/ivSecondCourse2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDescription2" />
+
+                    <ImageView
+                        android:id="@+id/ivSecondCourse2"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="24dp"
+                        android:src="@drawable/button_green_background"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivFirstCourse2"
+                        app:layout_constraintTop_toTopOf="@+id/ivFirstCourse2" />
+
+                    <TextView
+                        android:id="@+id/tvFirstCourseTitle2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:maxLines="2"
+                        android:text="Dicas para designers que buscam trabalhar..."
+                        android:textColor="@color/light_gray"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/ivFirstCourse2"
+                        app:layout_constraintStart_toStartOf="@+id/ivFirstCourse2"
+                        app:layout_constraintTop_toBottomOf="@id/ivFirstCourse2" />
+
+                    <TextView
+                        android:id="@+id/tvSecondCourseTitle2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:maxLines="2"
+                        android:text="Indicações do mês"
+                        android:textColor="@color/light_gray"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/ivSecondCourse2"
+                        app:layout_constraintStart_toStartOf="@+id/ivSecondCourse2"
+                        app:layout_constraintTop_toBottomOf="@id/ivSecondCourse2" />
+
+                    <TextView
+                        android:id="@+id/tvFirstCourseCategory2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="15dp"
+                        android:lineHeight="14dp"
+                        android:maxLines="1"
+                        android:text="Dicas de trabalho"
+                        android:textColor="@color/progress_bar_gray"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/ivFirstCourse2"
+                        app:layout_constraintStart_toStartOf="@+id/ivFirstCourse2"
+                        app:layout_constraintTop_toBottomOf="@+id/tvFirstCourseTitle2"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/tvSecondCourseCategory2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="15dp"
+                        android:lineHeight="14dp"
+                        android:maxLines="1"
+                        android:text="Recomendações"
+                        android:textColor="@color/progress_bar_gray"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/ivSecondCourse2"
+                        app:layout_constraintStart_toStartOf="@+id/ivSecondCourse2"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSecondCourseTitle2"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

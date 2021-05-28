@@ -1,23 +1,23 @@
-package com.br.equipe.oito.presente.ui.home
+package com.br.equipe.oito.presente
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import com.br.equipe.oito.presente.databinding.FragmentFiltersBinding
 import com.br.equipe.oito.presente.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
+class FiltersFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentFiltersBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentFiltersBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -33,7 +33,10 @@ class HomeFragment : Fragment() {
 
     private fun initListener() {
         binding.ivFilter.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToFiltersFragment())
+            requireActivity().onBackPressed()
+        }
+        binding.btnSaveAlterations.setOnClickListener {
+            requireActivity().onBackPressed()
         }
     }
 

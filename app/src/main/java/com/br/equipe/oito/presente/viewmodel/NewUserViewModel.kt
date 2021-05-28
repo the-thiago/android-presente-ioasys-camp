@@ -48,7 +48,7 @@ class NewUserViewModel : ViewModel() {
             if (cepDetails.isSuccessful) {
                 cepDetails.body().let {
                     _user.value?.locationCity = it?.localidade ?: ""
-                    _user.value?.locationState = it?.localidade ?: ""
+                    _user.value?.locationState = it?.uf ?: ""
                     _user.value?.cep = cep
                 }
             } else {

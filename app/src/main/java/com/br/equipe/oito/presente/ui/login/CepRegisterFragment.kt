@@ -12,7 +12,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.br.equipe.oito.presente.databinding.FragmentCepRegisterBinding
-import com.br.equipe.oito.presente.ui.login.typeofuser.ChooseTypeOfUserFragment.Companion.TUTOR_TYPE
 import com.br.equipe.oito.presente.util.Mask
 import com.br.equipe.oito.presente.viewmodel.NewUserViewModel
 
@@ -27,8 +26,6 @@ class CepRegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentCepRegisterBinding.inflate(inflater, container, false)
-        val model = ViewModelProvider(requireActivity()).get(NewUserViewModel::class.java)
-        if (model.typeOfUser.value == TUTOR_TYPE) binding.progressBar.progress = 65
         return binding.root
     }
 
@@ -55,7 +52,6 @@ class CepRegisterFragment : Fragment() {
     private fun initListener() {
         binding.etCep.addTextChangedListener(Mask.insert(Mask.FORMAT_CEP, binding.etCep))
         binding.btnContinueCep.setOnClickListener {
-            val model = ViewModelProvider(requireActivity()).get(NewUserViewModel::class.java)
             if (binding.etCep.text.isNullOrEmpty() || binding.etCep.text?.length ?: 0 < 9 || userViewModel.user.value?.locationCity.isNullOrEmpty()) {
                 Toast.makeText(
                     requireContext(),
@@ -64,11 +60,7 @@ class CepRegisterFragment : Fragment() {
                 ).show()
                 return@setOnClickListener
             }
-            if (model.typeOfUser.value == TUTOR_TYPE) {
-                findNavController().navigate(CepRegisterFragmentDirections.actionCepRegisterFragmentToEducationFragment())
-            } else {
-                findNavController().navigate(CepRegisterFragmentDirections.actionCepRegisterFragmentToGenderFragment())
-            }
+            findNavController().navigate(CepRegisterFragmentDirections.actionCepRegisterFragmentToGenderFragment())
         }
         binding.tvBack.setOnClickListener {
             requireActivity().onBackPressed()

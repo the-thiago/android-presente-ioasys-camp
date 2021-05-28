@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.br.equipe.oito.presente.databinding.FragmentEmailRegisterBinding
+import com.br.equipe.oito.presente.util.isEmailValid
 import com.br.equipe.oito.presente.viewmodel.NewUserViewModel
 
 class EmailRegisterFragment : Fragment() {
@@ -49,7 +50,7 @@ class EmailRegisterFragment : Fragment() {
     private fun initListener() {
         binding.btnContinueEmail.setOnClickListener {
             val email = binding.etEmail.text.toString()
-            if (email.contains("@")) {
+            if (email.isEmailValid()) {
                 userViewModel.updateEmail(email)
                 findNavController().navigate(EmailRegisterFragmentDirections.actionEmailRegisterFragmentToPasswordRegisterFragment())
             } else {

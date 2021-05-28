@@ -70,13 +70,6 @@ class PasswordRegisterFragment : Fragment() {
                 userViewModel.updatePassword(password)
                 findNavController().navigate(PasswordRegisterFragmentDirections.actionPasswordRegisterFragmentToCepRegisterFragment())
             }
-//            userViewModel.updatePassword(password)
-//            val model = ViewModelProvider(requireActivity()).get(NewUserViewModel::class.java)
-//            if (model.typeOfUser.value == ChooseTypeOfUserFragment.COMPANY_TYPE) {
-//                findNavController().navigate(PasswordRegisterFragmentDirections.actionPasswordRegisterFragmentToNumberOfEmployeesFragment())
-//            } else {
-//                findNavController().navigate(PasswordRegisterFragmentDirections.actionPasswordRegisterFragmentToCepRegisterFragment())
-//            }
         }
         binding.tvBack.setOnClickListener {
             requireActivity().onBackPressed()
