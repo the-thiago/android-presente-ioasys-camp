@@ -46,22 +46,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
+    <androidx.cardview.widget.CardView
         android:id="@+id/viewLoading"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#99516D9A"
-        android:elevation="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="1dp"
+        android:background="@color/white"
+        app:cardCornerRadius="10dp" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/loadingGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
+        android:visibility="gone"
         app:constraint_referenced_ids="viewLoading,loadingCircularProgress" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

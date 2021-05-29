@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingVertical="16dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivNotificationItem"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_notification_image" />
+
+    <TextView
+        android:id="@+id/tvNotificationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="14sp"
+        android:textColor="@color/light_gray"
+        app:layout_constraintStart_toEndOf="@+id/ivNotificationItem"
+        app:layout_constraintTop_toTopOf="@+id/ivNotificationItem"
+        tools:text="Já leu isso aqui?" />
+
+    <TextView
+        android:id="@+id/tvNotificationDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvNotificationTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvNotificationTitle"
+        tools:text="Pessoas com mesmos interesses que você adoram esse artigo, então trouxemos para você! 🤓" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

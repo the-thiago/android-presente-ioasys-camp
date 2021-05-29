@@ -62,14 +62,6 @@ class InterestsFragment : Fragment() {
                     R.color.progress_bar_gray
                 )
             }
-            when (newUser.ios) {
-                true -> updateBackgroundColor(binding.tvIos, R.color.green_ios)
-                false -> updateBackgroundColor(binding.tvIos, R.color.progress_bar_gray)
-            }
-            when (newUser.workTips) {
-                true -> updateBackgroundColor(binding.tvWorkTips, R.color.light_blue_work_tips)
-                false -> updateBackgroundColor(binding.tvWorkTips, R.color.progress_bar_gray)
-            }
             when (newUser.uxUi) {
                 true -> updateBackgroundColor(binding.tvUxUi, R.color.yellow_ux_ui)
                 false -> updateBackgroundColor(binding.tvUxUi, R.color.progress_bar_gray)
@@ -114,18 +106,6 @@ class InterestsFragment : Fragment() {
             when (userViewModel.user.value?.projectManager) {
                 true -> userViewModel.updateProjectManagementInterest(false)
                 else -> userViewModel.updateProjectManagementInterest(true)
-            }
-        }
-        binding.iosCard.setOnClickListener {
-            when (userViewModel.user.value?.ios) {
-                true -> userViewModel.updateIosInterest(false)
-                else -> userViewModel.updateIosInterest(true)
-            }
-        }
-        binding.workTipsCard.setOnClickListener {
-            when (userViewModel.user.value?.workTips) {
-                true -> userViewModel.updateWorkTipsInterest(false)
-                else -> userViewModel.updateWorkTipsInterest(true)
             }
         }
         binding.uxUiCard.setOnClickListener {

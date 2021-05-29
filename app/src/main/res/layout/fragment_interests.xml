@@ -128,55 +128,13 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/iosCard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        app:cardCornerRadius="8dp"
-        app:layout_constraintStart_toEndOf="@+id/projectManagementCard"
-        app:layout_constraintTop_toTopOf="@+id/projectManagementCard">
-
-        <TextView
-            android:id="@+id/tvIos"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/progress_bar_gray"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="8dp"
-            android:text="iOS"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/workTipsCard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="8dp"
-        app:layout_constraintStart_toStartOf="@+id/projectManagementCard"
-        app:layout_constraintTop_toBottomOf="@+id/projectManagementCard">
-
-        <TextView
-            android:id="@+id/tvWorkTips"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/progress_bar_gray"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="8dp"
-            android:text="Dicas de trabalho"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
         android:id="@+id/uxUiCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         app:cardCornerRadius="8dp"
-        app:layout_constraintStart_toEndOf="@+id/workTipsCard"
-        app:layout_constraintTop_toTopOf="@+id/workTipsCard">
+        app:layout_constraintStart_toEndOf="@+id/frontEndCard"
+        app:layout_constraintTop_toTopOf="@+id/frontEndCard">
 
         <TextView
             android:id="@+id/tvUxUi"
@@ -195,7 +153,7 @@
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="217dp"
         android:layout_marginBottom="16dp"
         android:progress="88"
         android:progressBackgroundTint="@color/light_gray"
@@ -204,7 +162,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnFinishRegister"
         app:layout_constraintEnd_toEndOf="@id/btnFinishRegister"
         app:layout_constraintStart_toStartOf="@id/btnFinishRegister"
-        app:layout_constraintTop_toBottomOf="@+id/workTipsCard"
+        app:layout_constraintTop_toBottomOf="@+id/projectManagementCard"
         app:layout_constraintVertical_bias="1.0" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -236,7 +194,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btnFinishRegister"
         app:layout_constraintStart_toStartOf="@+id/btnFinishRegister"
-        app:layout_constraintTop_toBottomOf="@+id/uxUiCard"
+        app:layout_constraintTop_toBottomOf="@+id/projectManagementCard"
         app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

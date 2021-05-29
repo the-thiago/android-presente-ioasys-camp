@@ -97,16 +97,6 @@ class NewUserViewModel : ViewModel() {
         notifyObservers()
     }
 
-    fun updateIosInterest(hasInterest: Boolean) {
-        _user.value?.ios = hasInterest
-        notifyObservers()
-    }
-
-    fun updateWorkTipsInterest(hasInterest: Boolean) {
-        _user.value?.workTips = hasInterest
-        notifyObservers()
-    }
-
     fun updateUxUiInterest(hasInterest: Boolean) {
         _user.value?.uxUi = hasInterest
         notifyObservers()

@@ -9,19 +9,31 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.br.equipe.oito.presente.R
 import com.br.equipe.oito.presente.databinding.FragmentFirstLoginBinding
+import com.br.equipe.oito.presente.util.dpToPx
 
 class FirstLoginFragment : Fragment() {
 
     private var _binding: FragmentFirstLoginBinding? = null
     private val binding get() = _binding!!
+    private var twentyDpInPx: Int? = null
+    private var twentyTwoDpInPx: Int? = null
+    private var oneHundredFortyDpInPx: Int? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFirstLoginBinding.inflate(inflater, container, false)
-        changeConstraintLayoutPadding(140)
+        getDimensions()
+        changeConstraintLayoutPadding(oneHundredFortyDpInPx ?: 140)
         return binding.root
+    }
+
+    private fun getDimensions() {
+        val density = requireContext().resources.displayMetrics.density
+        twentyDpInPx = 20.dpToPx(density)
+        twentyTwoDpInPx = 22.dpToPx(density)
+        oneHundredFortyDpInPx = 140.dpToPx(density)
     }
 
     override fun onDestroyView() {
@@ -37,27 +49,28 @@ class FirstLoginFragment : Fragment() {
     private fun initListeners() {
         binding.btnStartSession.setOnClickListener {
             findNavController().navigate(FirstLoginFragmentDirections.actionFirstLoginFragmentToLoginFragment())
-            changeConstraintLayoutPadding(20)
+            changeConstraintLayoutPadding(twentyDpInPx ?: 20)
         }
         binding.btnNewAccount.setOnClickListener {
             findNavController().navigate(FirstLoginFragmentDirections.actionFirstLoginFragmentToChooseTypeOfUserFragment())
-            changeConstraintLayoutPadding(20)
+            changeConstraintLayoutPadding(twentyDpInPx ?: 20)
         }
     }
 
-    private fun changeConstraintLayoutPadding(top: Int) {
+    private fun changeConstraintLayoutPadding(topInPx: Int) {
         requireActivity().findViewById<ConstraintLayout>(R.id.loginConstraintLayout).apply {
             this?.setPadding(
-                convertDpToPx(22),
-                convertDpToPx(top),
-                convertDpToPx(20),
-                convertDpToPx(22)
+                twentyTwoDpInPx ?: 22,
+                topInPx,
+                twentyDpInPx ?: 22,
+                twentyTwoDpInPx ?: 22
             )
         }
     }
 
-    private fun convertDpToPx(dp: Int): Int {
-        return (dp * requireContext().resources.displayMetrics.density).toInt()
-    }
+//    private fun convertDpToPx(dp: Int): Int {
+//        val density: Float = requireContext().resources.displayMetrics.density
+//        return (dp * requireContext().resources.displayMetrics.density).toInt()
+//    }
 
 }

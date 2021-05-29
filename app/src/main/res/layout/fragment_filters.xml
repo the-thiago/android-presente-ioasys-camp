@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FiltersFragment">
+    tools:context=".ui.home.FiltersFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/homeToolbar"
@@ -61,6 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/homeToolbar" />
 
     <TextView
+        android:id="@+id/tvFiltersInformation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -73,7 +74,111 @@
         app:layout_constraintTop_toBottomOf="@id/tvSelectTheAreas" />
 
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/androidCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="26dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFiltersInformation">
 
+        <TextView
+            android:id="@+id/tvAndroid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/progress_bar_gray"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:text="Android"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/backEndCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toEndOf="@+id/androidCard"
+        app:layout_constraintTop_toTopOf="@+id/androidCard">
+
+        <TextView
+            android:id="@+id/tvBackEnd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/progress_bar_gray"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:text="Back-End"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/frontEndCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="@+id/androidCard"
+        app:layout_constraintTop_toBottomOf="@+id/androidCard">
+
+        <TextView
+            android:id="@+id/tvFrontEnd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/progress_bar_gray"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:text="Front-End"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/projectManagementCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="@+id/androidCard"
+        app:layout_constraintTop_toBottomOf="@+id/frontEndCard">
+
+        <TextView
+            android:id="@+id/tvProjectManagement"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/progress_bar_gray"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:text="Gestão de projetos"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/uxUiCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toEndOf="@+id/frontEndCard"
+        app:layout_constraintTop_toTopOf="@+id/frontEndCard">
+
+        <TextView
+            android:id="@+id/tvUxUi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/progress_bar_gray"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:text="UX/UI"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="0dp"
@@ -81,7 +186,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:background="@drawable/button_green_background"
-        android:text="Salvar alterações"
+        android:text="Pesquisar"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="16sp"

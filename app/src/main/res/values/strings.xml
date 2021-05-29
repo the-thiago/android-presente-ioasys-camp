@@ -12,7 +12,7 @@
         <item>Homem Tras</item>
         <item>Mulher Cis</item>
         <item>Mulher Trans</item>
-        <item>Travesti</item>
+        <item>Não binário</item>
         <item>Outro</item>
         <item>Prefiro não responder</item>
     </string-array>
@@ -20,15 +20,19 @@
     <string-array name="sexualOrientations">
         <item>Assexual</item>
         <item>Bissexual</item>
+        <item>Homossexual</item>
         <item>Heretossexual</item>
+        <item>Panssexual</item>
         <item>Outro</item>
         <item>Prefiro não responder</item>
     </string-array>
 
     <string-array name="races">
-        <item>Amarelo (a)</item>
-        <item>Branco (a)</item>
+        <item>Amarela</item>
+        <item>Branca</item>
         <item>Indígina</item>
+        <item>Parda</item>
+        <item>Preta</item>
         <item>Outro</item>
         <item>Prefiro não responder</item>
     </string-array>

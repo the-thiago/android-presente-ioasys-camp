@@ -20,22 +20,31 @@
     </fragment>
     <fragment
         android:id="@+id/studiesFragment"
-        android:name="com.br.equipe.oito.presente.StudiesFragment"
+        android:name="com.br.equipe.oito.presente.ui.home.StudiesFragment"
         android:label="fragment_studies"
         tools:layout="@layout/fragment_studies" />
     <fragment
         android:id="@+id/notificationsFragment"
-        android:name="com.br.equipe.oito.presente.NotificationsFragment"
+        android:name="com.br.equipe.oito.presente.ui.home.notifications.NotificationsFragment"
         android:label="fragment_notifications"
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.br.equipe.oito.presente.ProfileFragment"
+        android:name="com.br.equipe.oito.presente.ui.home.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_loginActivity"
+            app:destination="@id/loginActivity" />
+    </fragment>
     <fragment
         android:id="@+id/filtersFragment"
-        android:name="com.br.equipe.oito.presente.FiltersFragment"
+        android:name="com.br.equipe.oito.presente.ui.home.FiltersFragment"
         android:label="fragment_filters"
         tools:layout="@layout/fragment_filters" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.br.equipe.oito.presente.ui.login.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
 </navigation>

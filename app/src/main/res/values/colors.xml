@@ -16,6 +16,7 @@
     <color name="light_gray">#555555</color>
     <color name="orange_text_color">#EB5C2C</color>
     <color name="progress_bar_gray">#C4C4C4</color>
+    <color name="transparent_gray">#33C4C4C4</color>
     <color name="progress_bar_pink">#F193B7</color>
     <color name="green_input_layout">#89C8A5</color>
     <color name="purple_android">#614F91</color>

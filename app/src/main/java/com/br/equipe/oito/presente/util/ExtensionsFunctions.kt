@@ -14,3 +14,7 @@ fun View.invisible() {
 fun String.isEmailValid(): Boolean {
     return !TextUtils.isEmpty(this) && android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
 }
+
+fun Int.dpToPx(density: Float): Int {
+    return (this * density).toInt()
+}
