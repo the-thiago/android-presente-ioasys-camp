@@ -19,7 +19,6 @@ class HomeActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initNetworkVerification()
         binding = ActivityHomeBinding.inflate(layoutInflater)
         changeStatusBarColor()
         setContentView(binding.root)

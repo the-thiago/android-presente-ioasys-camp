@@ -1,6 +1,7 @@
 package com.br.equipe.oito.presente.ui.base
 
 
+import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.br.equipe.oito.presente.core.NetworkConnection
@@ -10,7 +11,8 @@ open class BaseActivity : AppCompatActivity() {
     private val networkConnection by lazy { NetworkConnection(applicationContext) }
     private var noNetworkConnectionDialog: AlertDialog? = null
 
-    fun initNetworkVerification() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         networkConnection.observe(this) { isConnected ->
             if (isConnected) {
                 noNetworkConnectionDialog?.dismiss()

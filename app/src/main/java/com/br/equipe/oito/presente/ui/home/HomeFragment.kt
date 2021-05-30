@@ -10,6 +10,13 @@ import com.br.equipe.oito.presente.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
+    companion object {
+        const val TAG = "HomeFragment"
+        const val BLOG_TYPE = "BLOG_TYPE"
+        const val COURSE_TYPE = "COURSE_TYPE"
+        const val JOB_TYPE = "JOB_TYPE"
+    }
+
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
@@ -34,6 +41,27 @@ class HomeFragment : Fragment() {
     private fun initListener() {
         binding.ivFilter.setOnClickListener {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToFiltersFragment())
+        }
+        binding.cardBlog.setOnClickListener {
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToContentFragment(
+                    BLOG_TYPE
+                )
+            )
+        }
+        binding.cardJobs.setOnClickListener {
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToContentFragment(
+                    JOB_TYPE
+                )
+            )
+        }
+        binding.cardCourses.setOnClickListener {
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToContentFragment(
+                    COURSE_TYPE
+                )
+            )
         }
     }
 
