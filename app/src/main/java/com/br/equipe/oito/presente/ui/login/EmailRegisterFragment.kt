@@ -51,10 +51,11 @@ class EmailRegisterFragment : Fragment() {
         binding.btnContinueEmail.setOnClickListener {
             val email = binding.etEmail.text.toString()
             if (email.isEmailValid()) {
+                binding.ilEmail.error = null
                 userViewModel.updateEmail(email)
                 findNavController().navigate(EmailRegisterFragmentDirections.actionEmailRegisterFragmentToPasswordRegisterFragment())
             } else {
-                Toast.makeText(requireContext(), "Email inválido!", Toast.LENGTH_LONG).show()
+                binding.ilEmail.error = "Preencha o campo com o seu email!"
             }
         }
         binding.tvBack.setOnClickListener {

@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Presente</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="fragment_first_login_app_logo">App logo</string>
     <string name="fragment_first_login_start_session">Iniciar sessão</string>
@@ -8,10 +7,10 @@
     <string name="fragment_first_login_continue_as_guest">Continuar como convidado</string>
 
     <string-array name="genders">
-        <item>Homem Cis</item>
-        <item>Homem Tras</item>
-        <item>Mulher Cis</item>
-        <item>Mulher Trans</item>
+        <item>Homem cis</item>
+        <item>Homem trans</item>
+        <item>Mulher cis</item>
+        <item>Mulher trans</item>
         <item>Não binário</item>
         <item>Outro</item>
         <item>Prefiro não responder</item>
@@ -21,7 +20,7 @@
         <item>Assexual</item>
         <item>Bissexual</item>
         <item>Homossexual</item>
-        <item>Heretossexual</item>
+        <item>Heterossexual</item>
         <item>Panssexual</item>
         <item>Outro</item>
         <item>Prefiro não responder</item>

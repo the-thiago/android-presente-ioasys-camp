@@ -1,9 +1,12 @@
 package com.br.equipe.oito.presente.viewmodel
 
+
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.br.equipe.oito.presente.api.account.*
 import com.br.equipe.oito.presente.api.cep.Cep
 import com.br.equipe.oito.presente.api.cep.CepService
 import com.br.equipe.oito.presente.model.User
@@ -22,6 +25,63 @@ class NewUserViewModel : ViewModel() {
 
     private var _user = MutableLiveData<User>()
     val user: LiveData<User> = _user
+
+    private var _signIn = MutableLiveData<SignInResult>()
+    val signInResult: LiveData<SignInResult> = _signIn
+
+    private var _signUp = MutableLiveData<SignUpResult>()
+    val signUpResult: LiveData<SignUpResult> = _signUp
+
+    private var _signUpCode = MutableLiveData<Int>()
+    val signUpCode: LiveData<Int> = _signUpCode
+
+    fun signIn(credentials: Credentials) {
+        viewModelScope.launch {
+            val signInResultResponse: Response<SignInResult> =
+                AccountService.create().signIn(credentials)
+            if (signInResultResponse.isSuccessful) {
+                withContext(Dispatchers.Main) {
+                    _signIn.value = signInResultResponse.body()
+                }
+            } else {
+                withContext(Dispatchers.Main) {
+                    _signIn.value?.token = ""
+                    _signIn.value = _signIn.value
+                }
+            }
+        }
+    }
+
+    fun signUp() {
+        viewModelScope.launch {
+            val newApprentice = generateNewApprentice()
+            Log.d(TAG, "signUp: newAppre: $newApprentice")
+            val signUpResponse: Response<SignUpResult> =
+                AccountService.create().signUp(newApprentice)
+            _signUpCode.value = signUpResponse.code()
+        }
+    }
+
+    private fun generateNewApprentice(): NewApprentice {
+        val newUser = _user.value
+        val interests = mutableListOf<String>()
+        if (newUser?.android == true) interests.add("Android")
+        if (newUser?.backEnd == true) interests.add("Backend")
+        if (newUser?.frontEnd == true) interests.add("Frontend")
+        if (newUser?.projectManager == true) interests.add("Gestão de projetos")
+        if (newUser?.uxUi == true) interests.add("UI/UX")
+        return NewApprentice(
+            email = newUser?.email,
+            gender = newUser?.gender,
+            interests = interests,
+            locationCity = newUser?.locationCity,
+            locationState = newUser?.locationState,
+            name = newUser?.name,
+            password = newUser?.password,
+            race = newUser?.race,
+            sexualOrientation = newUser?.sexualOrientation
+        )
+    }
 
     fun setUser(user: User) {
         _user.value = user

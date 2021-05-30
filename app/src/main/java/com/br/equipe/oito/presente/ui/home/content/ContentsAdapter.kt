@@ -10,7 +10,7 @@ import com.br.equipe.oito.presente.R
 import com.br.equipe.oito.presente.model.Content
 import com.bumptech.glide.Glide
 
-class ContentsAdapter(private val contents: List<Content>) :
+class ContentsAdapter(private val contents: List<Content>, private val callback: (Content) -> Unit) :
     RecyclerView.Adapter<ContentsAdapter.ContentViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContentViewHolder {
@@ -36,6 +36,7 @@ class ContentsAdapter(private val contents: List<Content>) :
                 .into(imageView)
             tvTitle.text = content.title
             tvDescription.text = content.description
+            itemView.setOnClickListener { callback.invoke(content) }
         }
     }
 

@@ -75,17 +75,17 @@
         android:progressBackgroundTint="@color/light_gray"
         android:progressTint="@color/progress_bar_pink"
         android:scaleY="2"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignIn"
-        app:layout_constraintEnd_toEndOf="@id/btnSignIn"
-        app:layout_constraintStart_toStartOf="@id/btnSignIn" />
+        app:layout_constraintBottom_toTopOf="@+id/btnSignUp"
+        app:layout_constraintEnd_toEndOf="@id/btnSignUp"
+        app:layout_constraintStart_toStartOf="@id/btnSignUp" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnSignIn"
+        android:id="@+id/btnSignUp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="26dp"
         android:background="@drawable/button_green_background"
-        android:text="Entrar"
+        android:text="Cadastrar e entrar"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="16sp"

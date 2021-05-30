@@ -49,10 +49,11 @@ class NameRegisterFragment : Fragment() {
         binding.btnContinueName.setOnClickListener {
             val name = binding.etName.text.toString()
             if (name.isNotEmpty()) {
+                binding.ilName.error = null
                 userViewModel.updateName(name)
                 findNavController().navigate(NameRegisterFragmentDirections.actionNameRegisterFragmentToEmailRegisterFragment())
             } else {
-                Toast.makeText(requireContext(), "Preencha o nome!", Toast.LENGTH_LONG).show()
+                binding.ilName.error = "Preencha o campo com o seu nome!"
             }
         }
     }

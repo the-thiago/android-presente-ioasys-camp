@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.br.equipe.oito.presente.databinding.FragmentCepRegisterBinding
 import com.br.equipe.oito.presente.util.Mask
@@ -53,13 +52,10 @@ class CepRegisterFragment : Fragment() {
         binding.etCep.addTextChangedListener(Mask.insert(Mask.FORMAT_CEP, binding.etCep))
         binding.btnContinueCep.setOnClickListener {
             if (binding.etCep.text.isNullOrEmpty() || binding.etCep.text?.length ?: 0 < 9 || userViewModel.user.value?.locationCity.isNullOrEmpty()) {
-                Toast.makeText(
-                    requireContext(),
-                    "Digite um cep válido para continuar",
-                    Toast.LENGTH_SHORT
-                ).show()
+                binding.ilCep.error = "Digite um cep válido"
                 return@setOnClickListener
             }
+            binding.ilCep.error = null
             findNavController().navigate(CepRegisterFragmentDirections.actionCepRegisterFragmentToGenderFragment())
         }
         binding.tvBack.setOnClickListener {

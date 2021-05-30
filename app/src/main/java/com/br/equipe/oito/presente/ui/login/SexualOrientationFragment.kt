@@ -65,12 +65,9 @@ class SexualOrientationFragment : Fragment() {
         binding.btnContinueSexualOrientation.setOnClickListener {
             if (dropDownItems.contains(userViewModel.user.value?.sexualOrientation)) {
                 findNavController().navigate(SexualOrientationFragmentDirections.actionSexualOrientationFragmentToRaceFragment())
+                binding.ilSexualOrientation.error = null
             } else {
-                Toast.makeText(
-                    requireContext(),
-                    "Selecione uma opção para continuar!",
-                    Toast.LENGTH_SHORT
-                ).show()
+                binding.ilSexualOrientation.error = "Selecione uma opção!"
             }
         }
         binding.tvBack.setOnClickListener {

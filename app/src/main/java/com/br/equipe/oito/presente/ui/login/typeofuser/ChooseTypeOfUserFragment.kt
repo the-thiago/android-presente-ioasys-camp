@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
@@ -31,7 +31,6 @@ class ChooseTypeOfUserFragment : Fragment() {
     }
 
     private val userViewModel: NewUserViewModel by activityViewModels()
-
     private var _binding: FragmentChooseTypeOfUserBinding? = null
     private val binding get() = _binding!!
 
@@ -69,12 +68,16 @@ class ChooseTypeOfUserFragment : Fragment() {
 
     private fun initListeners() {
         binding.btnContinue.setOnClickListener {
-            val typeOfUserSelected = binding.viewPager.currentItem
-            val model = ViewModelProvider(requireActivity()).get(NewUserViewModel::class.java)
-            model.typeOfUser.postValue(typeOfUserSelected)
-            // new view model bellow
-            userViewModel.setUser(User())
-            findNavController().navigate(ChooseTypeOfUserFragmentDirections.actionChooseTypeOfUserFragmentToChooseTypeOfSessionFragment())
+            if (binding.viewPager.currentItem == APPRENTICE_TYPE) {
+                userViewModel.setUser(User())
+                findNavController().navigate(ChooseTypeOfUserFragmentDirections.actionChooseTypeOfUserFragmentToChooseTypeOfSessionFragment())
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    "Essa categoria estará disponível em breve!",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         }
         binding.btnBack.setOnClickListener {
             requireActivity().onBackPressed()

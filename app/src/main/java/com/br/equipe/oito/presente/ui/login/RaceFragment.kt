@@ -77,12 +77,9 @@ class RaceFragment : Fragment() {
         binding.btnContinueRace.setOnClickListener {
             if (dropDownItems.contains(userViewModel.user.value?.race)) {
                 findNavController().navigate(RaceFragmentDirections.actionRaceFragmentToInterestsFragment())
+                binding.ilRace.error = null
             } else {
-                Toast.makeText(
-                    requireContext(),
-                    "Selecione uma opção para continuar!",
-                    Toast.LENGTH_SHORT
-                ).show()
+                binding.ilRace.error = "Selecione uma opção!"
             }
         }
         binding.tvBack.setOnClickListener {

@@ -53,6 +53,7 @@ class PasswordRegisterFragment : Fragment() {
             }
         }
         if (password.length < 7 || password == password.toLowerCase(Locale.ROOT) || !hasSpecialCharacters) {
+            binding.ilPasswordRegister.error = "Ao menos 7 caracteres, 1 maiúsculo e 1 especial"
             Toast.makeText(
                 requireContext(),
                 "Senha não atende aos requesitos mínimos!",
@@ -67,6 +68,7 @@ class PasswordRegisterFragment : Fragment() {
         binding.btnContinuePassword.setOnClickListener {
             val password = binding.etPasswordRegister.text.toString()
             if (isValidPassword(password)) {
+                binding.ilPasswordRegister.error = null
                 userViewModel.updatePassword(password)
                 findNavController().navigate(PasswordRegisterFragmentDirections.actionPasswordRegisterFragmentToCepRegisterFragment())
             }

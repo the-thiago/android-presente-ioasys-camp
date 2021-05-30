@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.br.equipe.oito.presente.R
 import com.br.equipe.oito.presente.databinding.FragmentContentBinding
@@ -18,7 +20,7 @@ class ContentFragment : Fragment() {
 
     private var _binding: FragmentContentBinding? = null
     private val binding get() = _binding!!
-    val args: ContentFragmentArgs by navArgs()
+    private val args: ContentFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +38,7 @@ class ContentFragment : Fragment() {
     }
 
     private fun initRecycler() {
-        binding.contentRecycler.adapter = ContentsAdapter(mockedContent())
+        binding.contentRecycler.adapter = ContentsAdapter(mockedContent(), ::clickItem)
     }
 
     private fun mockedContent(): List<Content> {
@@ -95,6 +97,10 @@ class ContentFragment : Fragment() {
         binding.ivBack.setOnClickListener {
             requireActivity().onBackPressed()
         }
+    }
+
+    private fun clickItem(content: Content) {
+        findNavController().navigate(ContentFragmentDirections.actionContentFragmentToDetailsFragment())
     }
 
 }
