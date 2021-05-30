@@ -10,19 +10,19 @@ class SearchInterestsViewModel : ViewModel() {
         const val TAG = "SearchInterestsViewModel"
     }
 
-    private var _hasAndroidInterest = MutableLiveData<Boolean>()
+    private var _hasAndroidInterest = MutableLiveData(true)
     val hasAndroidInterest: LiveData<Boolean> = _hasAndroidInterest
 
-    private var _hasBackEndInterest = MutableLiveData<Boolean>()
+    private var _hasBackEndInterest = MutableLiveData(true)
     val hasBackEndInterest: LiveData<Boolean> = _hasBackEndInterest
 
-    private var _hasFrontEndInterest = MutableLiveData<Boolean>()
+    private var _hasFrontEndInterest = MutableLiveData(true)
     val hasFrontEndInterest: LiveData<Boolean> = _hasFrontEndInterest
 
-    private var _hasUxUiInterest = MutableLiveData<Boolean>()
+    private var _hasUxUiInterest = MutableLiveData(true)
     val hasUxUiInterest: LiveData<Boolean> = _hasUxUiInterest
 
-    private var _hasProjectManagementInterest = MutableLiveData<Boolean>()
+    private var _hasProjectManagementInterest = MutableLiveData(true)
     val hasProjectManagementInterest: LiveData<Boolean> = _hasProjectManagementInterest
 
     fun updateAndroidInterest(hasInterest: Boolean) {
