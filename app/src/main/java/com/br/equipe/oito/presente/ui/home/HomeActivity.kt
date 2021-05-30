@@ -2,14 +2,14 @@ package com.br.equipe.oito.presente.ui.home
 
 import android.os.Bundle
 import android.view.WindowManager
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.br.equipe.oito.presente.R
 import com.br.equipe.oito.presente.databinding.ActivityHomeBinding
+import com.br.equipe.oito.presente.ui.base.BaseActivity
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
 
     companion object {
         const val TAG = "HomeActivity"
@@ -19,6 +19,7 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initNetworkVerification()
         binding = ActivityHomeBinding.inflate(layoutInflater)
         changeStatusBarColor()
         setContentView(binding.root)
@@ -28,7 +29,6 @@ class HomeActivity : AppCompatActivity() {
     private fun setupBottomNavigation() {
         val navController = findNavController(R.id.fragmentHome)
         binding.bottomNavigation.setupWithNavController(navController)
-//        binding.bottomNavigation.setLayerType(LabelVisibilityMode.LABEL_VISIBILITY_LABELED)
     }
 
     private fun changeStatusBarColor() {
