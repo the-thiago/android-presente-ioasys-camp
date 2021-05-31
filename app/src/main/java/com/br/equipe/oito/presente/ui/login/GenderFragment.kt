@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -19,7 +18,7 @@ class GenderFragment : Fragment() {
     private var _binding: FragmentGenderBinding? = null
     private val binding get() = _binding!!
     private val userViewModel: NewUserViewModel by activityViewModels()
-    var dropDownItems = arrayOf<String>()
+    private var dropDownItems = arrayOf<String>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
