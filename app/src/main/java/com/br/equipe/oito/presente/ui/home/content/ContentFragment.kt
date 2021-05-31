@@ -99,8 +99,16 @@ class ContentFragment : Fragment() {
         }
     }
 
-    private fun clickItem(content: Content) {
-        findNavController().navigate(ContentFragmentDirections.actionContentFragmentToDetailsFragment())
+    private fun clickItem() {
+        if (args.typeOfContent == BLOG_TYPE) {
+            findNavController().navigate(ContentFragmentDirections.actionContentFragmentToDetailsFragment())
+        } else {
+            Toast.makeText(
+                requireContext(),
+                "Em breve, vamos liberar o acesso!",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 
 }

@@ -19,7 +19,7 @@ interface AccountService {
 
     companion object {
 
-        private const val BASE_URL = "http://25.3.22.99:3000/api/v1/auth/"
+        private const val BASE_URL = "https://presente-back.herokuapp.com/api/v1/auth/"
 
         fun create(): AccountService {
             var client: OkHttpClient? = null
