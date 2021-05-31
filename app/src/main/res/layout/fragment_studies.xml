@@ -64,6 +64,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvFixedCourses" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginHorizontal="20dp"
@@ -81,7 +82,7 @@
                 android:id="@+id/ivCourse"
                 android:layout_width="160dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_profile"
+                android:src="@drawable/ic_temp_study"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -137,5 +138,39 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvTemporaryCourses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/rubik_bold"
+        android:lineHeight="23dp"
+        android:text="Curso temporário"
+        android:textColor="@color/black_text"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <TextView
+        android:id="@+id/tvDescriptionTemporaryCourses"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="4dp"
+        android:text="Estão disponíveis por um período e uma turma limitada, pois são realizados por empresas e são mais complexos"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTemporaryCourses" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nenhum curso temporário em andamento"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescriptionTemporaryCourses" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:elevation="20dp"
     android:layout_margin="10dp"
+    android:elevation="20dp"
     app:cardCornerRadius="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,20 +15,25 @@
             android:id="@+id/ivContentImage"
             android:layout_width="0dp"
             android:layout_height="80dp"
-            android:src="@drawable/ic_profile_photo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_temp_course1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvContentTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_margin="8dp"
             android:layout_marginTop="15dp"
+            android:maxLines="2"
             android:text="Designer de Produto"
+            android:textAlignment="textStart"
             android:textColor="@color/light_gray"
             android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivContentImage" />
 
@@ -38,6 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="14dp"
+            android:maxLines="2"
             android:text="Apperture Science"
             android:textColor="@color/progress_bar_gray"
             android:textSize="13sp"

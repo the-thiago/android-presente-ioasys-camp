@@ -18,6 +18,45 @@ import com.br.equipe.oito.presente.ui.home.HomeFragment.Companion.JOB_TYPE
 
 class ContentFragment : Fragment() {
 
+    companion object {
+        val coursesContent = listOf(
+            Content(
+                title = "Teoria das cores",
+                description = "Teoria do Design",
+                image = R.drawable.ic_temp_course1
+            ),
+            Content(
+                title = "Como montar um briefing de UX writing",
+                description = "UX Writing",
+                image = R.drawable.ic_temp_course2
+            )
+        )
+        val blogContent = listOf(
+            Content(
+                title = "Dicas para designers que buscam trabalhar no...",
+                description = "Dicas de trabalho",
+                image = R.drawable.ic_temp_blog1
+            ),
+            Content(
+                title = "Indicações do mês",
+                description = "Recomendações",
+                image = R.drawable.ic_temp_blog2
+            )
+        )
+        val jobContent = listOf(
+            Content(
+                title = "Designer de Produto",
+                description = "Apperture Science",
+                image = R.drawable.ic_temp_job1
+            ),
+            Content(
+                title = "UX Writer Jr.",
+                description = "Orwell",
+                image = R.drawable.ic_temp_job2
+            )
+        )
+    }
+
     private var _binding: FragmentContentBinding? = null
     private val binding get() = _binding!!
     private val args: ContentFragmentArgs by navArgs()
@@ -38,21 +77,14 @@ class ContentFragment : Fragment() {
     }
 
     private fun initRecycler() {
-        binding.contentRecycler.adapter = ContentsAdapter(mockedContent(), ::clickItem)
-    }
-
-    private fun mockedContent(): List<Content> {
-        val contents = mutableListOf<Content>()
-        repeat(10) {
-            contents.add(
-                Content(
-                    image = R.drawable.ic_notification_image,
-                    title = "UX Writer Jr.",
-                    description = "Orwell"
-                )
-            )
+        when (args.typeOfContent) {
+            COURSE_TYPE -> binding.contentRecycler.adapter =
+                ContentsAdapter(coursesContent, ::clickItem)
+            BLOG_TYPE -> binding.contentRecycler.adapter =
+                ContentsAdapter(blogContent, ::clickItem)
+            JOB_TYPE -> binding.contentRecycler.adapter =
+                ContentsAdapter(jobContent, ::clickItem)
         }
-        return contents
     }
 
     private fun setTexts() {
@@ -95,6 +127,9 @@ class ContentFragment : Fragment() {
 
     private fun initListeners() {
         binding.ivBack.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+        binding.tvBackView.setOnClickListener {
             requireActivity().onBackPressed()
         }
     }
