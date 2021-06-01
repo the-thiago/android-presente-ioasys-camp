@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Presente"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.home.HomeActivity" />
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.login.LoginActivity"
             android:screenOrientation="portrait" />

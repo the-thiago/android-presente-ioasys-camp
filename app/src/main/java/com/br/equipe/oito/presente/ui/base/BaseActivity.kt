@@ -4,6 +4,7 @@ package com.br.equipe.oito.presente.ui.base
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.br.equipe.oito.presente.core.NetworkConnection
 
 open class BaseActivity : AppCompatActivity() {
@@ -13,6 +14,7 @@ open class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         networkConnection.observe(this) { isConnected ->
             if (isConnected) {
                 noNetworkConnectionDialog?.dismiss()
